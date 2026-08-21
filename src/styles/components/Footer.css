@@ -1,0 +1,345 @@
+/* ============================================
+   FOOTER - ELEGANCE BLACK & BLOOD RED THEME
+   ============================================ */
+
+.footer-elegance {
+  background-color: #0a0a0a;
+  border-top: 2px solid #1a1a1a;
+  padding: clamp(32px, 6vw, 64px) 0 clamp(16px, 3vw, 24px);
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.footer-top {
+  margin-bottom: clamp(20px, 4vw, 32px);
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================================
+   BRAND
+   ============================================ */
+
+.footer-brand {
+  font-family: "Cinzel", serif;
+  font-weight: 700;
+  font-size: clamp(1.05rem, 3vw, 1.6rem);
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+}
+
+.footer-brand .brand-white {
+  color: #ffffff;
+}
+.footer-brand .brand-red {
+  color: #8b0000;
+  margin-left: 6px;
+}
+
+.footer-description {
+  color: #9ca3af;
+  font-size: clamp(0.75rem, 1.6vw, 0.9rem);
+  line-height: 1.8;
+  max-width: 340px;
+  margin-bottom: 20px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-icons .social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(30px, 6vw, 40px);
+  height: clamp(30px, 6vw, 40px);
+  border-radius: 50%;
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  color: #9ca3af;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.social-icons .social-link:hover {
+  background: #8b0000;
+  border-color: #8b0000;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 20px rgba(139, 0, 0, 0.3);
+}
+
+/* ============================================
+   HEADINGS
+   ============================================ */
+
+.footer-heading {
+  color: #ffffff;
+  font-size: clamp(0.68rem, 1.8vw, 1rem);
+  font-weight: 600;
+  margin-bottom: 16px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 8px;
+  white-space: nowrap;
+}
+
+.footer-heading::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 24px;
+  height: 2px;
+  background: #8b0000;
+}
+
+/* ============================================
+   TRI ROW: Quick Links | Support | Contact
+   Stays a single row at every width
+   ============================================ */
+
+.footer-tri-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  gap: clamp(10px, 3vw, 32px);
+  width: 100%;
+}
+
+.footer-tri-block {
+  flex: 1 1 0;
+  min-width: 0; /* allows text to shrink/wrap instead of overflowing */
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 9px;
+}
+
+.footer-links a {
+  color: #9ca3af;
+  text-decoration: none;
+  font-size: clamp(0.62rem, 1.8vw, 0.9rem);
+  transition: all 0.3s ease;
+  display: inline-block;
+  line-height: 1.4;
+}
+
+.footer-links a:hover {
+  color: #8b0000;
+  transform: translateX(4px);
+}
+
+/* ============================================
+   CONTACT — force icon+text as one tight row
+   at every screen width
+   ============================================ */
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: flex-start; /* prevents items stretching across the column */
+}
+
+.contact-item {
+  display: inline-flex; /* was flex — inline-flex stops it stretching full-width */
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  width: auto; /* kills any full-width stretch causing the gap */
+  color: #9ca3af;
+  text-decoration: none;
+  font-size: clamp(0.72rem, 1.6vw, 0.9rem);
+}
+
+.contact-item .contact-icon svg {
+  width: clamp(13px, 3vw, 16px);
+  height: clamp(13px, 3vw, 16px);
+}
+/* ============================================
+   CONTACT ICONS — plain, no circle/background
+   ever, at any width or state
+   ============================================ */
+
+.footer-contact .contact-item .contact-icon,
+.footer-contact .contact-item .contact-icon:hover,
+.footer-contact .contact-item:hover .contact-icon {
+  background: none !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #8b0000;
+}
+
+.footer-contact .contact-item:hover .contact-icon {
+  color: #8b0000; /* stays same red, no bg change on hover */
+}
+.contact-item .contact-text {
+  word-break: break-word;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+.contact-item:hover .contact-text,
+.contact-item:hover .contact-icon {
+  color: #8b0000;
+}
+
+/* Keep the tight inline row on desktop specifically */
+@media (min-width: 769px) {
+  .contact-item {
+    align-items: center;
+  }
+
+  .contact-item .contact-icon {
+    margin-top: 0;
+  }
+}
+/* ============================================
+   DIVIDER
+   ============================================ */
+
+.footer-divider {
+  border: none;
+  border-top: 1px solid #1a1a1a;
+  margin: 0 0 20px;
+  opacity: 1;
+}
+
+/* ============================================
+   BOTTOM BAR
+   ============================================ */
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.footer-bottom .copyright {
+  color: #6b7280;
+  font-size: clamp(0.65rem, 1.5vw, 0.85rem);
+  margin: 0;
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: clamp(12px, 3vw, 20px);
+}
+
+.footer-bottom-links a {
+  color: #6b7280;
+  text-decoration: none;
+  font-size: clamp(0.62rem, 1.4vw, 0.8rem);
+  transition: color 0.3s ease;
+}
+
+.footer-bottom-links a:hover {
+  color: #8b0000;
+}
+
+/* ============================================
+   RESPONSIVE — MOBILE
+   ============================================ */
+
+@media (max-width: 768px) {
+  .footer-col-brand {
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-col-brand .footer-description {
+    margin: 0 auto 16px;
+  }
+
+  /* Quick Links, Support, Contact stay in ONE row */
+  .footer-tri-row {
+    text-align: left;
+    gap: 10px;
+  }
+
+  .footer-heading {
+    white-space: normal;
+  }
+
+  .footer-heading::after {
+    left: 0;
+    transform: none;
+  }
+
+  .footer-links a:hover {
+    transform: none;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-tri-row {
+    gap: 8px;
+  }
+
+  .footer-tri-block-contact .contact-text {
+    word-break: break-all;
+  }
+}
+
+/* ============================================
+   TOUCH / MOTION
+   ============================================ */
+
+@media (hover: none) {
+  .social-icons .social-link:hover {
+    transform: none;
+    background: #1a1a1a;
+    border-color: #2a2a2a;
+    color: #9ca3af;
+  }
+
+  .social-icons .social-link:active {
+    background: #8b0000;
+    border-color: #8b0000;
+    color: #ffffff;
+    transform: scale(0.95);
+  }
+
+  .footer-links a:hover {
+    color: #9ca3af;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .social-icons .social-link,
+  .footer-links a,
+  .contact-item {
+    transition: none !important;
+  }
+}

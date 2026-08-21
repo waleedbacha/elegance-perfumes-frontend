@@ -1,0 +1,293 @@
+/* ============================================
+   HERO MANAGEMENT - BLOOD RED & BLACK THEME
+   ============================================ */
+
+.hero-management {
+  padding: 20px;
+  background: #0a0a0a;
+  min-height: 100vh;
+}
+
+/* Header */
+.hero-management .management-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.hero-management .management-header h1 {
+  color: #ffffff !important;
+  font-size: 1.8rem;
+  font-weight: 700;
+  font-family: "Cinzel", serif;
+  margin-bottom: 4px;
+}
+
+.hero-management .management-header p {
+  color: #d1d5db !important;
+  margin-bottom: 8px;
+}
+
+.hero-management .hero-count {
+  color: #9ca3af !important;
+  font-size: 0.85rem;
+}
+
+.hero-management .header-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.hero-management .seed-btn {
+  border-color: #2a2a2a;
+  color: #d1d5db !important;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hero-management .seed-btn:hover {
+  border-color: #8b0000;
+  color: #8b0000 !important;
+}
+
+.hero-management .btn-add-hero {
+  background: #8b0000;
+  border: none;
+  color: #ffffff !important;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hero-management .btn-add-hero:hover {
+  background: #cc0000;
+  color: #ffffff !important;
+}
+
+/* Table */
+.hero-management .table-card {
+  background: #ffffff !important;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.hero-management .admin-table {
+  color: #000000 !important;
+  margin-bottom: 0;
+  background: #ffffff !important;
+}
+
+.hero-management .admin-table thead th {
+  background: #8b0000 !important;
+  color: #ffffff !important;
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 12px 16px;
+  border-bottom: 2px solid #6b0000;
+}
+
+.hero-management .admin-table tbody td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: middle;
+  color: #000000 !important;
+  background: #ffffff !important;
+}
+
+.hero-management .admin-table tbody tr:hover {
+  background: #f3f4f6 !important;
+}
+
+/* Hero Image Cell */
+.hero-management .hero-image-cell {
+  width: 50px;
+  height: 50px;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+}
+
+.hero-management .hero-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-management .hero-title-cell {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-management .hero-title-cell strong {
+  color: #000000 !important;
+}
+
+.hero-management .hero-title-cell .hero-subtitle {
+  color: #6b7280 !important;
+  font-size: 0.75rem;
+}
+
+.hero-management .description-cell {
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #000000 !important;
+}
+
+/* Action Buttons */
+.hero-management .action-buttons {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+}
+
+.hero-management .action-btn {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #ffffff;
+  color: #4b5563 !important;
+}
+
+.hero-management .action-btn:hover {
+  transform: translateY(-2px);
+  border-color: #8b0000;
+}
+
+.hero-management .action-btn.toggle:hover {
+  background: #fef3c7;
+  color: #d97706 !important;
+  border-color: #d97706;
+}
+
+.hero-management .action-btn.edit:hover {
+  background: #dbeafe;
+  color: #2563eb !important;
+  border-color: #2563eb;
+}
+
+.hero-management .action-btn.delete:hover {
+  background: #fee2e2;
+  color: #dc2626 !important;
+  border-color: #dc2626;
+}
+
+/* Image Upload */
+.hero-management .image-upload-area {
+  position: relative;
+  border: 2px dashed #d1d5db;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  background: #f9fafb;
+}
+
+.hero-management .image-upload-area:hover {
+  border-color: #8b0000;
+}
+
+.hero-management .image-upload-input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.hero-management .image-upload-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: #4b5563 !important;
+  cursor: pointer;
+}
+
+.hero-management .image-upload-label small {
+  color: #6b7280 !important;
+  font-size: 0.7rem;
+}
+
+.hero-management .image-preview-container {
+  position: relative;
+}
+
+.hero-management .image-preview {
+  max-width: 200px;
+  max-height: 150px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.hero-management .change-image-text {
+  font-size: 0.75rem;
+  color: #8b0000 !important;
+  margin-top: 4px;
+}
+
+/* Modal */
+.hero-management .hero-form {
+  padding: 4px 0;
+}
+
+.hero-management .hero-form .form-label {
+  color: #1f2937 !important;
+  font-weight: 600;
+}
+
+.hero-management .hero-form .form-control,
+.hero-management .hero-form .form-select {
+  background: #ffffff !important;
+  border: 1px solid #d1d5db;
+  color: #000000 !important;
+}
+
+.hero-management .hero-form .form-control:focus,
+.hero-management .hero-form .form-select:focus {
+  border-color: #8b0000;
+  box-shadow: 0 0 0 0.2rem rgba(139, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-management .management-header {
+    flex-direction: column;
+  }
+
+  .hero-management .header-actions {
+    width: 100%;
+  }
+
+  .hero-management .seed-btn,
+  .hero-management .btn-add-hero {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .hero-management .description-cell {
+    max-width: 100px;
+  }
+
+  .hero-management .admin-table {
+    font-size: 0.8rem;
+  }
+
+  .hero-management .admin-table thead th,
+  .hero-management .admin-table tbody td {
+    padding: 8px 10px;
+  }
+}

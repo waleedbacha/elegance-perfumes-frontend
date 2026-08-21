@@ -1,0 +1,398 @@
+/* ============================================
+   CATEGORY MANAGEMENT - BLOOD RED & BLACK THEME
+   IMPROVED VISIBILITY - BLACK TEXT
+   ============================================ */
+
+.category-management {
+  padding: 20px;
+  background: #0a0a0a;
+  min-height: 100vh;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+
+.category-management .management-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.category-management .management-header h1 {
+  color: #ffffff !important;
+  font-size: 1.8rem;
+  font-weight: 700;
+  font-family: "Cinzel", serif;
+  margin-bottom: 4px;
+}
+
+.category-management .management-header p {
+  color: #d1d5db !important;
+  margin-bottom: 8px;
+}
+
+.category-management .category-count {
+  color: #9ca3af !important;
+  font-size: 0.85rem;
+}
+
+.category-management .header-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.category-management .seed-btn {
+  border-color: #2a2a2a;
+  color: #d1d5db !important;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.category-management .seed-btn:hover {
+  border-color: #8b0000;
+  color: #8b0000 !important;
+}
+
+.category-management .btn-add-category {
+  background: #8b0000;
+  border: none;
+  color: #ffffff !important;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.category-management .btn-add-category:hover {
+  background: #cc0000;
+  color: #ffffff !important;
+}
+
+/* ============================================
+   TABLE - BLACK TEXT
+   ============================================ */
+
+.category-management .table-card {
+  background: #ffffff !important;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.category-management .admin-table {
+  color: #000000 !important;
+  margin-bottom: 0;
+  background: #ffffff !important;
+}
+
+.category-management .admin-table thead th {
+  background: #8b0000 !important;
+  color: #ffffff !important;
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 12px 16px;
+  border-bottom: 2px solid #6b0000;
+}
+
+.category-management .admin-table tbody td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: middle;
+  color: #000000 !important;
+  background: #ffffff !important;
+}
+
+.category-management .admin-table tbody tr:hover {
+  background: #f3f4f6 !important;
+}
+
+.category-management .admin-table tbody tr:hover td {
+  background: #f3f4f6 !important;
+}
+
+/* ============================================
+   ORDER CONTROLS
+   ============================================ */
+
+.category-management .order-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.category-management .order-btn {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #4b5563 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.category-management .order-btn:hover:not(:disabled) {
+  border-color: #8b0000;
+  color: #8b0000 !important;
+}
+
+.category-management .order-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.category-management .order-number {
+  color: #1f2937 !important;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* ============================================
+   CATEGORY IMAGE
+   ============================================ */
+
+.category-management .category-image-cell {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+}
+
+.category-management .category-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.category-management .description-cell {
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #000000 !important;
+}
+
+/* ============================================
+   CELL TEXT - BLACK
+   ============================================ */
+
+.category-management .admin-table tbody td {
+  color: #000000 !important;
+}
+
+.category-management .admin-table tbody td.capitalize {
+  color: #000000 !important;
+  font-weight: 500;
+}
+
+.category-management .admin-table tbody td .badge {
+  font-weight: 600;
+}
+
+/* ============================================
+   ACTION BUTTONS
+   ============================================ */
+
+.category-management .action-buttons {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+}
+
+.category-management .action-btn {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #ffffff;
+  color: #4b5563 !important;
+}
+
+.category-management .action-btn:hover {
+  transform: translateY(-2px);
+  border-color: #8b0000;
+}
+
+.category-management .action-btn.edit:hover {
+  background: #dbeafe;
+  color: #2563eb !important;
+  border-color: #2563eb;
+}
+
+.category-management .action-btn.delete:hover {
+  background: #fee2e2;
+  color: #dc2626 !important;
+  border-color: #dc2626;
+}
+
+/* ============================================
+   IMAGE UPLOAD
+   ============================================ */
+
+.category-management .image-upload-area {
+  position: relative;
+  border: 2px dashed #d1d5db;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  background: #f9fafb;
+}
+
+.category-management .image-upload-area:hover {
+  border-color: #8b0000;
+}
+
+.category-management .image-upload-input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.category-management .image-upload-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: #4b5563 !important;
+  cursor: pointer;
+}
+
+.category-management .image-upload-label svg {
+  color: #6b7280;
+}
+
+.category-management .image-upload-label small {
+  color: #6b7280 !important;
+  font-size: 0.7rem;
+}
+
+.category-management .image-preview-container {
+  position: relative;
+}
+
+.category-management .image-preview {
+  max-width: 200px;
+  max-height: 150px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.category-management .change-image-text {
+  font-size: 0.75rem;
+  color: #8b0000 !important;
+  margin-top: 4px;
+}
+
+/* ============================================
+   MODAL
+   ============================================ */
+
+.category-management .category-form {
+  padding: 4px 0;
+}
+
+.category-management .category-form .form-label {
+  color: #1f2937 !important;
+  font-weight: 600;
+}
+
+.category-management .category-form .form-control,
+.category-management .category-form .form-select {
+  background: #ffffff !important;
+  border: 1px solid #d1d5db;
+  color: #000000 !important;
+}
+
+.category-management .category-form .form-control:focus,
+.category-management .category-form .form-select:focus {
+  border-color: #8b0000;
+  box-shadow: 0 0 0 0.2rem rgba(139, 0, 0, 0.1);
+}
+
+.category-management .category-form .form-text {
+  color: #6b7280 !important;
+}
+
+.category-management .category-form .form-control::placeholder {
+  color: #9ca3af !important;
+}
+
+/* ============================================
+   PAGINATION
+   ============================================ */
+
+.category-management .pagination-info {
+  color: #1f2937 !important;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+  .category-management .management-header {
+    flex-direction: column;
+  }
+
+  .category-management .header-actions {
+    width: 100%;
+  }
+
+  .category-management .seed-btn,
+  .category-management .btn-add-category {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .category-management .description-cell {
+    max-width: 100px;
+  }
+
+  .category-management .admin-table {
+    font-size: 0.8rem;
+  }
+
+  .category-management .admin-table thead th,
+  .category-management .admin-table tbody td {
+    padding: 8px 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .category-management .admin-table {
+    font-size: 0.7rem;
+  }
+
+  .category-management .admin-table thead th,
+  .category-management .admin-table tbody td {
+    padding: 6px 8px;
+  }
+
+  .category-management .action-btn {
+    width: 28px;
+    height: 28px;
+  }
+
+  .category-management .action-btn svg {
+    width: 14px;
+    height: 14px;
+  }
+}

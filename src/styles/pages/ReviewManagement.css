@@ -1,0 +1,627 @@
+/* ============================================
+   REVIEW MANAGEMENT - BLOOD RED & BLACK THEME
+   IMPROVED VISIBILITY - BLACK TEXT
+   ============================================ */
+
+.review-management {
+  padding: 20px;
+  background: #0a0a0a;
+  min-height: 100vh;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+
+.review-management .management-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.review-management .management-header h1 {
+  color: #ffffff !important;
+  font-size: 1.8rem;
+  font-weight: 700;
+  font-family: "Cinzel", serif;
+  margin-bottom: 4px;
+}
+
+.review-management .management-header p {
+  color: #ffffff !important;
+  margin-bottom: 8px;
+}
+
+.review-management .review-stats-summary {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.review-management .review-stats-summary span {
+  color: #ffffff !important;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ============================================
+   CONTROLS
+   ============================================ */
+
+.review-management .management-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.review-management .search-wrapper {
+  flex: 1;
+  min-width: 200px;
+  position: relative;
+}
+
+.review-management .search-wrapper .search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6b7280;
+}
+
+.review-management .search-wrapper .search-input {
+  width: 100%;
+  padding: 10px 12px 10px 40px;
+  background: #ffffff !important;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  color: #000000 !important;
+  font-size: 0.9rem;
+}
+
+.review-management .search-wrapper .search-input::placeholder {
+  color: #6b7280;
+}
+
+.review-management .search-wrapper .search-input:focus {
+  outline: none;
+  border-color: #8b0000;
+}
+
+.review-management .filter-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+}
+
+.review-management .filter-select {
+  padding: 10px 12px;
+  background: #ffffff !important;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  color: #000000 !important;
+  font-size: 0.9rem;
+  min-width: 140px;
+}
+
+.review-management .filter-select:focus {
+  outline: none;
+  border-color: #8b0000;
+}
+
+.review-management .items-per-page {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+  font-size: 0.85rem;
+}
+
+.review-management .limit-select {
+  padding: 10px 12px;
+  background: #ffffff !important;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  color: #000000 !important;
+  font-size: 0.9rem;
+}
+
+/* ============================================
+   TABLE - BLACK TEXT
+   ============================================ */
+
+.review-management .table-card {
+  background: #ffffff !important;
+  border: 1px solid #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.review-management .admin-table {
+  color: #000000 !important;
+  margin-bottom: 0;
+  background: #ffffff !important;
+}
+
+.review-management .admin-table thead th {
+  background: #8b0000 !important;
+  color: #ffffff !important;
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 12px 16px;
+  border-bottom: 2px solid #6b0000;
+}
+
+.review-management .admin-table tbody td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: middle;
+  color: #000000 !important;
+  background: #ffffff !important;
+}
+
+.review-management .admin-table tbody tr:hover {
+  background: #f3f4f6 !important;
+}
+
+.review-management .admin-table tbody tr:hover td {
+  background: #f3f4f6 !important;
+}
+
+/* ============================================
+   CELL STYLES - BLACK TEXT
+   ============================================ */
+
+.review-management .product-cell .product-name {
+  color: #000000 !important;
+  font-weight: 700;
+}
+
+.review-management .product-cell .product-brand {
+  color: #4b5563 !important;
+  font-size: 0.75rem;
+}
+
+.review-management .customer-cell .customer-name {
+  color: #000000 !important;
+  font-weight: 600;
+}
+
+.review-management .customer-cell .verified-badge {
+  font-size: 0.6rem;
+  padding: 1px 6px;
+}
+
+.review-management .review-cell .review-title {
+  color: #000000 !important;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.review-management .review-cell .review-comment {
+  color: #1f2937 !important;
+  font-size: 0.8rem;
+}
+
+/* ============================================
+   STATUS BADGE
+   ============================================ */
+
+.review-management .status-badge {
+  font-weight: 600;
+}
+
+/* ============================================
+   ACTION BUTTONS - DARK
+   ============================================ */
+
+.review-management .action-buttons {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+}
+
+.review-management .action-btn {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #ffffff;
+  color: #4b5563;
+}
+
+.review-management .action-btn:hover {
+  transform: translateY(-2px);
+  border-color: #8b0000;
+}
+
+.review-management .action-btn.view:hover {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.review-management .action-btn.approve {
+  color: #059669;
+}
+
+.review-management .action-btn.approve:hover {
+  background: #d1fae5;
+  color: #059669;
+  border-color: #059669;
+}
+
+.review-management .action-btn.reject {
+  color: #dc2626;
+}
+
+.review-management .action-btn.reject:hover {
+  background: #fee2e2;
+  color: #dc2626;
+  border-color: #dc2626;
+}
+
+.review-management .action-btn.delete:hover {
+  background: #fee2e2;
+  color: #dc2626;
+  border-color: #dc2626;
+}
+
+/* ============================================
+   PAGINATION - DARK
+   ============================================ */
+
+.review-management .pagination-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 16px 20px;
+  border-top: 1px solid #e5e7eb;
+  background: #ffffff;
+}
+
+.review-management .pagination-info {
+  color: #1f2937 !important;
+  font-size: 0.85rem;
+}
+
+.review-management .pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.review-management .pagination-btn {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #1f2937;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.review-management .pagination-btn:hover:not(.disabled) {
+  border-color: #8b0000;
+  color: #8b0000;
+}
+
+.review-management .pagination-btn.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  color: #9ca3af;
+}
+
+.review-management .pagination-pages {
+  display: flex;
+  gap: 2px;
+}
+
+.review-management .pagination-page-btn {
+  width: 36px;
+  height: 36px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #1f2937;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.review-management .pagination-page-btn:hover {
+  border-color: #d1d5db;
+  color: #000000;
+}
+
+.review-management .pagination-page-btn.active {
+  background: #8b0000;
+  color: #ffffff !important;
+  border-color: #8b0000;
+}
+
+.review-management .pagination-ellipsis {
+  color: #6b7280 !important;
+  padding: 0 4px;
+  display: flex;
+  align-items: center;
+}
+
+/* ============================================
+   MODAL - DARK TEXT
+   ============================================ */
+
+.review-modal .modal-content {
+  background: #ffffff !important;
+  border: 1px solid #d1d5db;
+  color: #000000 !important;
+}
+
+.review-modal .modal-header {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 16px 20px;
+  background: #f9fafb;
+}
+
+.review-modal .modal-header .modal-title {
+  color: #000000 !important;
+  font-family: "Cinzel", serif;
+}
+
+.review-modal .modal-header .btn-close {
+  filter: none;
+  color: #000000;
+}
+
+.review-modal .modal-body {
+  padding: 20px;
+  color: #000000 !important;
+}
+
+.review-modal .modal-footer {
+  border-top: 1px solid #e5e7eb;
+  padding: 16px 20px;
+  background: #f9fafb;
+}
+
+/* ============================================
+   REVIEW DETAIL - DARK TEXT
+   ============================================ */
+
+.review-detail-content .detail-section {
+  margin-bottom: 20px;
+}
+
+.review-detail-content .detail-section h6 {
+  color: #4b5563 !important;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.review-detail-content .detail-section p {
+  color: #000000 !important;
+  margin-bottom: 2px;
+}
+
+.review-detail-content .detail-section .product-name {
+  color: #000000 !important;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.review-detail-content .detail-section .product-brand {
+  color: #4b5563 !important;
+}
+
+.review-detail-content .detail-section .customer-name {
+  color: #000000 !important;
+  font-weight: 600;
+}
+
+.review-detail-content .detail-section .customer-email {
+  color: #1f2937 !important;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.review-detail-content .rating-display {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.review-detail-content .rating-display .rating-number {
+  color: #000000 !important;
+  font-weight: 700;
+}
+
+.review-detail-content .review-comment-full {
+  color: #000000 !important;
+  line-height: 1.6;
+  padding: 12px;
+  background: #f9fafb;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.review-detail-content .pros-list,
+.review-detail-content .cons-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.review-detail-content .pros-list li {
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  background: #d1fae5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+
+.review-detail-content .cons-list li {
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+}
+
+.review-detail-content .review-date {
+  color: #6b7280 !important;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 12px;
+}
+
+.review-detail-content .admin-response {
+  background: #f3f4f6;
+  border: 1px solid #d1d5db;
+  padding: 12px 16px;
+  border-radius: 8px;
+}
+
+.review-detail-content .admin-response .response-date {
+  color: #6b7280 !important;
+  font-size: 0.75rem;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 992px) {
+  .review-management {
+    padding: 16px;
+  }
+
+  .review-management .management-controls {
+    flex-direction: column;
+  }
+
+  .review-management .search-wrapper {
+    width: 100%;
+  }
+
+  .review-management .filter-wrapper {
+    width: 100%;
+  }
+
+  .review-management .filter-select {
+    flex: 1;
+    min-width: unset;
+  }
+
+  .review-management .items-per-page {
+    width: 100%;
+  }
+
+  .review-management .pagination-wrapper {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .review-management .management-header {
+    flex-direction: column;
+  }
+
+  .review-management .review-stats-summary {
+    gap: 10px;
+  }
+
+  .review-management .admin-table {
+    font-size: 0.8rem;
+  }
+
+  .review-management .admin-table thead th,
+  .review-management .admin-table tbody td {
+    padding: 8px 10px;
+  }
+
+  .review-management .action-btn {
+    width: 28px;
+    height: 28px;
+  }
+
+  .review-management .action-btn svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .review-management .pagination-btn,
+  .review-management .pagination-page-btn {
+    width: 30px;
+    height: 30px;
+  }
+
+  .review-management .pagination-pages {
+    gap: 2px;
+  }
+}
+
+@media (max-width: 576px) {
+  .review-management .admin-table {
+    font-size: 0.7rem;
+  }
+
+  .review-management .admin-table thead th,
+  .review-management .admin-table tbody td {
+    padding: 6px 8px;
+  }
+
+  .review-management .review-cell .review-title {
+    font-size: 0.75rem;
+  }
+
+  .review-management .review-cell .review-comment {
+    font-size: 0.7rem;
+  }
+
+  .review-management .rating-cell svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .review-management .action-btn {
+    width: 24px;
+    height: 24px;
+  }
+
+  .review-management .action-btn svg {
+    width: 12px;
+    height: 12px;
+  }
+}

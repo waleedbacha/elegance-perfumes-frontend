@@ -1,0 +1,137 @@
+/* frontend/src/styles/components/Pagination.css */
+.pagination-container {
+  padding: 16px 24px;
+  border-top: 1px solid #2a2a2a;
+  background: #0a0a0a;
+}
+
+.pagination-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.pagination-info {
+  color: #9ca3af;
+  font-size: 0.85rem;
+}
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.pagination-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  background: transparent;
+  color: #9ca3af;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  border-color: #8b0000;
+  color: #ffffff;
+  background: rgba(139, 0, 0, 0.1);
+}
+
+.pagination-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.pagination-pages {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.pagination-page-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 36px;
+  padding: 0 8px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: transparent;
+  color: #9ca3af;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pagination-page-btn:hover:not(.active):not(.ellipsis) {
+  border-color: #2a2a2a;
+  color: #ffffff;
+}
+
+.pagination-page-btn.active {
+  background: #8b0000;
+  color: #ffffff;
+  border-color: #8b0000;
+}
+
+.pagination-page-btn.ellipsis {
+  cursor: default;
+  color: #4a4a4a;
+}
+
+.pagination-page-btn.ellipsis:hover {
+  background: transparent;
+}
+
+.pagination-page-size {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 12px;
+  color: #9ca3af;
+  font-size: 0.85rem;
+}
+
+.pagination-select {
+  padding: 4px 8px;
+  border: 1px solid #2a2a2a;
+  border-radius: 4px;
+  background: #0a0a0a;
+  color: #ffffff;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.pagination-select:focus {
+  outline: none;
+  border-color: #8b0000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .pagination-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .pagination-info {
+    text-align: center;
+  }
+
+  .pagination-controls {
+    justify-content: center;
+  }
+
+  .pagination-page-size {
+    margin-left: 0;
+  }
+}

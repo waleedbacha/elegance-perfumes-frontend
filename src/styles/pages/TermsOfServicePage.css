@@ -1,0 +1,698 @@
+/* ============================================
+   TERMS OF SERVICE - BLOOD RED & BLACK THEME
+   ============================================ */
+
+.terms-page {
+  background: #0a0a0a;
+  color: #ffffff;
+  min-height: 100vh;
+  padding-top: 80px;
+}
+
+/* ============================================
+   HERO SECTION - SCOPED
+   ============================================ */
+
+.terms-page .terms-hero {
+  padding: 60px 0 40px;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a0a0a 50%, #0a0a0a 100%);
+  border-bottom: 1px solid rgba(139, 0, 0, 0.1);
+}
+
+.terms-page .terms-hero .hero-content {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.terms-page .terms-hero .hero-badge {
+  display: inline-block;
+  background: rgba(139, 0, 0, 0.15);
+  color: #8b0000;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  padding: 0.4rem 1.5rem;
+  border-radius: 30px;
+  border: 1px solid rgba(139, 0, 0, 0.3);
+  margin-bottom: 1rem;
+}
+
+.terms-page .terms-hero .hero-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  font-family: "Cinzel", serif;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.terms-page .terms-hero .hero-title .highlight {
+  color: #8b0000;
+  background: linear-gradient(135deg, #8b0000, #cc0000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.terms-page .terms-hero .hero-subtitle {
+  color: #d1d5db;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 600px;
+  margin: 0 auto 0.5rem;
+}
+
+.terms-page .terms-hero .hero-date {
+  color: #6b7280;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+/* ============================================
+   SIDEBAR - SCOPED
+   ============================================ */
+
+.terms-page .terms-sidebar {
+  position: sticky;
+  top: 100px;
+  background: #111111;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid #1a1a1a;
+}
+
+.terms-page .terms-sidebar h5 {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.terms-page .terms-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.terms-page .terms-sidebar ul li {
+  margin-bottom: 0.5rem;
+}
+
+.terms-page .terms-sidebar ul li a {
+  color: #9ca3af;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  display: block;
+  padding: 0.3rem 0.75rem;
+  border-radius: 6px;
+}
+
+.terms-page .terms-sidebar ul li a:hover {
+  color: #8b0000;
+  background: rgba(139, 0, 0, 0.08);
+}
+
+/* ============================================
+   MAIN CONTENT - SCOPED
+   ============================================ */
+
+.terms-page .terms-main {
+  padding: 0;
+}
+
+.terms-page .terms-section {
+  background: #111111;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #1a1a1a;
+  margin-bottom: 1.5rem;
+}
+
+.terms-page .terms-section .section-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid rgba(139, 0, 0, 0.2);
+}
+
+.terms-page .terms-section .section-header svg {
+  color: #8b0000;
+  flex-shrink: 0;
+}
+
+.terms-page .terms-section .section-header h2 {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: "Cinzel", serif;
+  margin: 0;
+}
+
+.terms-page .terms-section p {
+  color: #d1d5db;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+/* ============================================
+   TERMS LIST
+   ============================================ */
+
+.terms-page .terms-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.terms-page .terms-list li {
+  color: #d1d5db;
+  font-size: 0.9rem;
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.terms-page .terms-list li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: #8b0000;
+}
+
+.terms-page .terms-list li:last-child {
+  border-bottom: none;
+}
+
+/* ============================================
+   INFO GRID - 2 COLUMN
+   ============================================ */
+
+.terms-page .info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.terms-page .info-card {
+  background: #0a0a0a;
+  padding: 1.25rem;
+  border-radius: 10px;
+  border: 1px solid #1a1a1a;
+}
+
+.terms-page .info-card h5 {
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.terms-page .info-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.terms-page .info-card ul li {
+  color: #9ca3af;
+  font-size: 0.85rem;
+  padding: 0.25rem 0;
+  padding-left: 1.25rem;
+  position: relative;
+}
+
+.terms-page .info-card ul li::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  color: #8b0000;
+}
+
+/* ============================================
+   ORDER GRID
+   ============================================ */
+
+.terms-page .order-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.terms-page .order-item {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  background: #0a0a0a;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid #1a1a1a;
+}
+
+.terms-page .order-item .order-icon {
+  color: #8b0000;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.terms-page .order-item h6 {
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.15rem;
+}
+
+.terms-page .order-item p {
+  color: #9ca3af;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ============================================
+   SHIPPING GRID
+   ============================================ */
+
+.terms-page .shipping-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.terms-page .shipping-item {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  background: #0a0a0a;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid #1a1a1a;
+}
+
+.terms-page .shipping-item svg {
+  color: #8b0000;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.terms-page .shipping-item h6 {
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.15rem;
+}
+
+.terms-page .shipping-item p {
+  color: #9ca3af;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ============================================
+   RETURN GRID - 3 COLUMN
+   ============================================ */
+
+.terms-page .return-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.terms-page .return-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  background: #0a0a0a;
+  border: 1px solid #1a1a1a;
+}
+
+.terms-page .return-item.allowed {
+  border-color: rgba(16, 185, 129, 0.2);
+  color: #10b981;
+}
+
+.terms-page .return-item.allowed svg {
+  color: #10b981;
+}
+
+.terms-page .return-item.not-allowed {
+  border-color: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}
+
+.terms-page .return-item.not-allowed svg {
+  color: #ef4444;
+}
+
+/* ============================================
+   LOYALTY GRID
+   ============================================ */
+
+.terms-page .loyalty-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.terms-page .loyalty-item {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  background: #0a0a0a;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid #1a1a1a;
+}
+
+.terms-page .loyalty-item .loyalty-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.terms-page .loyalty-item h6 {
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.15rem;
+}
+
+.terms-page .loyalty-item p {
+  color: #9ca3af;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ============================================
+   CONTACT INFO - SCOPED
+   ============================================ */
+
+.terms-page .contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.terms-page .contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: #0a0a0a;
+  border-radius: 8px;
+  border: 1px solid #1a1a1a;
+}
+
+.terms-page .contact-item svg {
+  color: #8b0000;
+  flex-shrink: 0;
+}
+
+.terms-page .contact-item span {
+  color: #d1d5db;
+  font-size: 0.9rem;
+}
+
+/* ============================================
+   RESPONSIVE - FULLY MOBILE RESPONSIVE
+   ============================================ */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .terms-page .terms-sidebar {
+    display: none;
+  }
+
+  .terms-page .terms-hero .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .terms-page .order-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Mobile Phones - 2 Column View */
+@media (max-width: 768px) {
+  .terms-page {
+    padding-top: 70px;
+  }
+
+  .terms-page .terms-hero {
+    padding: 40px 0 30px;
+  }
+
+  .terms-page .terms-hero .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .terms-page .terms-hero .hero-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .terms-page .terms-section {
+    padding: 1.25rem;
+  }
+
+  .terms-page .terms-section .section-header h2 {
+    font-size: 1.25rem;
+  }
+
+  /* 2 Column Grids */
+  .terms-page .info-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+
+  .terms-page .order-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+
+  .terms-page .shipping-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+
+  .terms-page .return-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  .terms-page .loyalty-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+
+  .terms-page .info-card {
+    padding: 0.75rem;
+  }
+
+  .terms-page .order-item {
+    padding: 0.75rem;
+  }
+
+  .terms-page .shipping-item {
+    padding: 0.75rem;
+  }
+
+  .terms-page .loyalty-item {
+    padding: 0.75rem;
+  }
+
+  .terms-page .return-item {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.5rem;
+  }
+
+  .terms-page .contact-item {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Small Phones */
+@media (max-width: 576px) {
+  .terms-page .terms-hero .hero-title {
+    font-size: 1.5rem;
+  }
+
+  .terms-page .terms-hero .hero-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .terms-page .terms-section {
+    padding: 1rem;
+  }
+
+  .terms-page .terms-section .section-header h2 {
+    font-size: 1.1rem;
+  }
+
+  /* 2 Column Grids - Maintain 2 columns */
+  .terms-page .info-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  .terms-page .order-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  .terms-page .shipping-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  .terms-page .return-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.4rem;
+  }
+
+  .terms-page .loyalty-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  .terms-page .info-card h5 {
+    font-size: 0.8rem;
+  }
+
+  .terms-page .info-card ul li {
+    font-size: 0.75rem;
+  }
+
+  .terms-page .order-item h6 {
+    font-size: 0.8rem;
+  }
+
+  .terms-page .order-item p {
+    font-size: 0.7rem;
+  }
+
+  .terms-page .shipping-item h6 {
+    font-size: 0.8rem;
+  }
+
+  .terms-page .shipping-item p {
+    font-size: 0.7rem;
+  }
+
+  .terms-page .loyalty-item h6 {
+    font-size: 0.8rem;
+  }
+
+  .terms-page .loyalty-item p {
+    font-size: 0.7rem;
+  }
+
+  .terms-page .loyalty-item .loyalty-icon {
+    font-size: 1.2rem;
+  }
+
+  .terms-page .return-item {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.4rem;
+  }
+
+  .terms-page .contact-item {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.6rem;
+  }
+
+  .terms-page .terms-list li {
+    font-size: 0.8rem;
+  }
+
+  .terms-page .terms-section p {
+    font-size: 0.85rem;
+  }
+
+  .terms-page .contact-item span {
+    font-size: 0.8rem;
+  }
+}
+
+/* Extra Small Phones - Still 2 Columns */
+@media (max-width: 400px) {
+  .terms-page .info-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.4rem;
+  }
+
+  .terms-page .order-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.4rem;
+  }
+
+  .terms-page .shipping-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.4rem;
+  }
+
+  .terms-page .return-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.3rem;
+  }
+
+  .terms-page .loyalty-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.4rem;
+  }
+
+  .terms-page .info-card {
+    padding: 0.5rem;
+  }
+
+  .terms-page .order-item {
+    padding: 0.5rem;
+  }
+
+  .terms-page .shipping-item {
+    padding: 0.5rem;
+  }
+
+  .terms-page .loyalty-item {
+    padding: 0.5rem;
+  }
+
+  .terms-page .info-card ul li {
+    font-size: 0.7rem;
+    padding: 0.15rem 0;
+    padding-left: 1rem;
+  }
+
+  .terms-page .order-item h6 {
+    font-size: 0.7rem;
+  }
+
+  .terms-page .shipping-item h6 {
+    font-size: 0.7rem;
+  }
+
+  .terms-page .loyalty-item h6 {
+    font-size: 0.7rem;
+  }
+
+  .terms-page .return-item {
+    font-size: 0.6rem;
+  }
+}

@@ -1,0 +1,454 @@
+/* ============================================
+   SEO DASHBOARD
+   ============================================ */
+
+.seo-dashboard {
+  padding: 0;
+}
+
+/* Score Card */
+.seo-score-card {
+  background: linear-gradient(145deg, #1a1a1a, #0d0d0d) !important;
+  border: 1px solid #2a2a2a !important;
+  border-radius: 16px !important;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.score-circle {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  margin: 0 auto;
+}
+
+.score-circle svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.score-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.score-number {
+  display: block;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.score-label {
+  display: block;
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+/* Metric Cards */
+.metric-card {
+  background: #1a1a1a !important;
+  border: 1px solid #2a2a2a !important;
+  border-radius: 12px !important;
+  height: 100%;
+}
+
+.metric-card .card-body {
+  padding: 16px;
+}
+
+.metric-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.metric-name {
+  color: #e5e7eb;
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
+.metric-bar {
+  width: 100%;
+  height: 6px;
+  background: #2a2a2a;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.metric-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.6s ease;
+}
+
+/* Analytics Cards */
+.analytics-card {
+  background: #1a1a1a !important;
+  border: 1px solid #2a2a2a !important;
+  border-radius: 12px !important;
+  transition: all 0.3s ease;
+}
+
+.analytics-card:hover {
+  border-color: #8b0000 !important;
+  transform: translateY(-2px);
+}
+
+.analytics-card .card-body {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+}
+
+.analytics-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(139, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8b0000;
+  flex-shrink: 0;
+}
+
+.analytics-info {
+  flex: 1;
+}
+
+.analytics-value {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.analytics-label {
+  display: block;
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.analytics-trend {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.analytics-trend.positive {
+  color: #10b981;
+}
+
+.analytics-trend.negative {
+  color: #ef4444;
+}
+
+/* Rankings Table */
+.rankings-card {
+  background: #1a1a1a !important;
+  border: 1px solid #2a2a2a !important;
+  border-radius: 12px !important;
+  overflow: hidden;
+}
+
+.rankings-card .card-header {
+  background: #0d0d0d !important;
+  border-bottom: 1px solid #2a2a2a !important;
+  padding: 16px 20px;
+}
+
+.rankings-card .card-header h5 {
+  color: #ffffff;
+}
+
+.rankings-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.rankings-table thead th {
+  background: #0d0d0d;
+  color: #9ca3af;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 12px 16px;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.rankings-table tbody td {
+  padding: 12px 16px;
+  color: #e5e7eb;
+  border-bottom: 1px solid #1a1a1a;
+  font-size: 0.85rem;
+}
+
+.rankings-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.position-badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 20px;
+  background: rgba(139, 0, 0, 0.15);
+  color: #8b0000;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+/* Cannibalization */
+.cannibalization-card {
+  background: #1a1a1a !important;
+  border: 1px solid #2a2a2a !important;
+  border-radius: 12px !important;
+  height: 100%;
+}
+
+.cannibalization-card .card-header {
+  background: #0d0d0d !important;
+  border-bottom: 1px solid #2a2a2a !important;
+}
+
+.cannibalization-card .card-header h5 {
+  color: #ffffff;
+}
+
+.cannibalization-item {
+  padding: 10px 0;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.cannibalization-item:last-child {
+  border-bottom: none;
+}
+
+.cannibalization-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.cannibalization-header .keyword {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.cannibalization-pages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.cannibalization-pages .page-link {
+  font-size: 0.7rem;
+  color: #6b7280;
+  padding: 2px 8px;
+  background: #0d0d0d;
+  border-radius: 4px;
+}
+
+/* Keyword Research */
+.keyword-research-card {
+  background: #1a1a1a !important;
+  border: 1px solid #2a2a2a !important;
+  border-radius: 12px !important;
+}
+
+.keyword-research-card .card-header {
+  background: #0d0d0d !important;
+  border-bottom: 1px solid #2a2a2a !important;
+}
+
+.keyword-research-card .card-header h5 {
+  color: #ffffff;
+}
+
+.keyword-research-card .form-control {
+  background: #0d0d0d !important;
+  border: 1px solid #2a2a2a !important;
+  color: #ffffff !important;
+}
+
+.keyword-research-card .form-control:focus {
+  border-color: #8b0000 !important;
+  box-shadow: 0 0 0 3px rgba(139, 0, 0, 0.1) !important;
+}
+
+/* Analysis Grid */
+.analysis-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.analysis-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.analysis-item .label {
+  font-size: 0.7rem;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.analysis-item .value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* Long Tail Suggestions */
+.long-tail-suggestions .suggestions-list {
+  list-style: none;
+  padding: 0;
+  margin: 4px 0 0 0;
+}
+
+.long-tail-suggestions .suggestions-list li {
+  color: #9ca3af;
+  font-size: 0.85rem;
+  padding: 2px 0;
+  padding-left: 16px;
+  position: relative;
+}
+
+.long-tail-suggestions .suggestions-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #8b0000;
+}
+
+/* Suggestions Card */
+.suggestions-card {
+  background: #1a1a1a !important;
+  border: 1px solid #2a2a2a !important;
+  border-radius: 12px !important;
+  height: 100%;
+}
+
+.suggestions-card .card-header {
+  background: #0d0d0d !important;
+  border-bottom: 1px solid #2a2a2a !important;
+}
+
+.suggestions-card .card-header h5 {
+  color: #ffffff;
+}
+
+.suggestion-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.suggestion-item:last-child {
+  border-bottom: none;
+}
+
+.suggestion-info .keyword {
+  display: block;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.suggestion-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 2px;
+}
+
+.suggestion-metrics .metric {
+  font-size: 0.7rem;
+  color: #6b7280;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .score-circle {
+    width: 120px;
+    height: 120px;
+  }
+
+  .score-number {
+    font-size: 1.6rem;
+  }
+
+  .analysis-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .rankings-table {
+    font-size: 0.75rem;
+  }
+
+  .rankings-table thead th,
+  .rankings-table tbody td {
+    padding: 8px 10px;
+  }
+
+  .analytics-card .card-body {
+    padding: 12px 16px;
+  }
+
+  .analytics-value {
+    font-size: 1.1rem;
+  }
+
+  .analytics-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .metric-card .card-body {
+    padding: 12px;
+  }
+
+  .suggestion-metrics {
+    gap: 6px;
+  }
+}
+
+@media (max-width: 576px) {
+  .score-circle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .score-number {
+    font-size: 1.2rem;
+  }
+
+  .rankings-card .card-header {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .cannibalization-pages .page-link {
+    font-size: 0.6rem;
+    padding: 1px 6px;
+  }
+}

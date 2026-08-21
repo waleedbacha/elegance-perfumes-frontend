@@ -1,0 +1,391 @@
+/* ============================================
+   NAVBAR MANAGEMENT - BLOOD RED & BLACK THEME
+   ============================================ */
+
+.navbar-management {
+  padding: 20px;
+  background: #0a0a0a;
+  min-height: 100vh;
+}
+
+/* Header */
+.navbar-management .management-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.navbar-management .management-header h1 {
+  color: #ffffff !important;
+  font-size: 1.8rem;
+  font-weight: 700;
+  font-family: "Cinzel", serif;
+  margin-bottom: 4px;
+}
+
+.navbar-management .management-header p {
+  color: #d1d5db !important;
+  margin-bottom: 8px;
+}
+
+.navbar-management .item-count {
+  color: #9ca3af !important;
+  font-size: 0.85rem;
+}
+
+.navbar-management .header-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.navbar-management .seed-btn {
+  border-color: #2a2a2a;
+  color: #d1d5db !important;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.navbar-management .seed-btn:hover {
+  border-color: #8b0000;
+  color: #8b0000 !important;
+}
+
+.navbar-management .btn-add-item {
+  background: #8b0000;
+  border: none;
+  color: #ffffff !important;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.navbar-management .btn-add-item:hover {
+  background: #cc0000;
+  color: #ffffff !important;
+}
+
+/* Table */
+.navbar-management .table-card {
+  background: #ffffff !important;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.navbar-management .admin-table {
+  color: #000000 !important;
+  margin-bottom: 0;
+  background: #ffffff !important;
+}
+
+.navbar-management .admin-table thead th {
+  background: #8b0000 !important;
+  color: #ffffff !important;
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 12px 16px;
+  border-bottom: 2px solid #6b0000;
+}
+
+.navbar-management .admin-table tbody td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: middle;
+  color: #000000 !important;
+  background: #ffffff !important;
+}
+
+.navbar-management .admin-table tbody tr:hover {
+  background: #f3f4f6 !important;
+}
+
+/* Order Controls */
+.navbar-management .order-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.navbar-management .order-number {
+  color: #6b7280 !important;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.navbar-management .order-controls {
+  display: flex;
+  gap: 2px;
+}
+
+.navbar-management .order-btn {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #4b5563 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.navbar-management .order-btn:hover:not(:disabled) {
+  border-color: #8b0000;
+  color: #8b0000 !important;
+}
+
+.navbar-management .order-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* Item Label */
+.navbar-management .item-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar-management .item-label span {
+  color: #000000 !important;
+  font-weight: 500;
+}
+
+/* Path Code */
+.navbar-management .path-code {
+  background: #f3f4f6;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  color: #8b0000 !important;
+}
+
+/* Action Buttons */
+.navbar-management .action-buttons {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+}
+
+.navbar-management .action-btn {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #ffffff;
+  color: #4b5563 !important;
+}
+
+.navbar-management .action-btn:hover {
+  transform: translateY(-2px);
+  border-color: #8b0000;
+}
+
+.navbar-management .action-btn.visibility:hover {
+  background: #fef3c7;
+  color: #d97706 !important;
+  border-color: #d97706;
+}
+
+.navbar-management .action-btn.edit:hover {
+  background: #dbeafe;
+  color: #2563eb !important;
+  border-color: #2563eb;
+}
+
+.navbar-management .action-btn.delete:hover {
+  background: #fee2e2;
+  color: #dc2626 !important;
+  border-color: #dc2626;
+}
+
+/* Modal */
+.navbar-management .admin-modal .modal-content {
+  background: #ffffff;
+  color: #000000;
+  border: 1px solid #d1d5db;
+}
+
+.navbar-management .admin-modal .modal-header {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.navbar-management .admin-modal .modal-header .btn-close {
+  color: #000000;
+}
+
+.navbar-management .admin-modal .modal-title {
+  font-family: "Cinzel", serif;
+  color: #000000;
+}
+
+.navbar-management .admin-modal .modal-footer {
+  border-top: 1px solid #e5e7eb;
+}
+
+.navbar-management .admin-modal .form-label {
+  color: #1f2937 !important;
+  font-weight: 600;
+}
+
+.navbar-management .admin-modal .form-control,
+.navbar-management .admin-modal .form-select {
+  background: #ffffff !important;
+  border: 1px solid #d1d5db;
+  color: #000000 !important;
+}
+
+.navbar-management .admin-modal .form-control:focus,
+.navbar-management .admin-modal .form-select:focus {
+  border-color: #8b0000;
+  box-shadow: 0 0 0 0.2rem rgba(139, 0, 0, 0.1);
+}
+
+.navbar-management .admin-modal .form-text {
+  color: #6b7280 !important;
+}
+
+.navbar-management .admin-modal .form-switch .form-check-input {
+  background-color: #d1d5db;
+  border-color: #9ca3af;
+}
+
+.navbar-management .admin-modal .form-switch .form-check-input:checked {
+  background-color: #8b0000;
+  border-color: #8b0000;
+}
+
+.navbar-management .admin-modal .form-switch .form-check-label {
+  color: #000000;
+}
+
+/* Empty State */
+.navbar-management .empty-state-card {
+  background: #ffffff !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 12px !important;
+}
+
+.navbar-management .empty-state-card h5 {
+  color: #000000;
+}
+
+.navbar-management .empty-state-card .text-muted {
+  color: #6b7280 !important;
+}
+
+/* Loading State */
+.navbar-management .admin-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  gap: 16px;
+}
+
+.navbar-management .admin-loading .spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #2a2a2a;
+  border-top-color: #8b0000;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Badge styles */
+.navbar-management .admin-table .badge {
+  color: #ffffff !important;
+}
+
+.navbar-management .admin-table .badge.bg-secondary {
+  background-color: #6b7280 !important;
+  color: #ffffff !important;
+}
+
+.navbar-management .admin-table .badge.bg-info {
+  background-color: #3b82f6 !important;
+  color: #ffffff !important;
+}
+
+.navbar-management .admin-table .badge.bg-danger {
+  background-color: #dc2626 !important;
+  color: #ffffff !important;
+}
+
+.navbar-management .admin-table .badge.bg-success {
+  background-color: #16a34a !important;
+  color: #ffffff !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar-management .management-header {
+    flex-direction: column;
+  }
+
+  .navbar-management .header-actions {
+    width: 100%;
+  }
+
+  .navbar-management .seed-btn,
+  .navbar-management .btn-add-item {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .navbar-management .admin-table {
+    font-size: 0.8rem;
+  }
+
+  .navbar-management .admin-table thead th,
+  .navbar-management .admin-table tbody td {
+    padding: 8px 10px;
+  }
+
+  .navbar-management .action-btn {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-management .admin-table {
+    font-size: 0.7rem;
+  }
+
+  .navbar-management .admin-table thead th,
+  .navbar-management .admin-table tbody td {
+    padding: 6px 8px;
+  }
+
+  .navbar-management .action-btn {
+    width: 24px;
+    height: 24px;
+  }
+
+  .navbar-management .action-btn svg {
+    width: 14px;
+    height: 14px;
+  }
+}

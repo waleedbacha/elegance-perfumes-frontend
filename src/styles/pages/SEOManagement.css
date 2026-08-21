@@ -1,0 +1,290 @@
+/* ============================================
+   SEO MANAGEMENT
+   ============================================ */
+
+.seo-management {
+  padding: 0;
+}
+
+.management-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.management-header h1 {
+  color: #ffffff;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.management-header p {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.btn-reset {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+
+/* Tabs */
+.seo-tabs {
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.seo-tabs .nav-tabs {
+  border-bottom: none;
+}
+
+.seo-tabs .nav-item .nav-link {
+  color: #9ca3af;
+  border: none;
+  padding: 12px 20px;
+  font-weight: 500;
+  border-radius: 8px 8px 0 0;
+  transition: all 0.3s ease;
+}
+
+.seo-tabs .nav-item .nav-link:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.seo-tabs .nav-item .nav-link.active {
+  color: #ffffff;
+  background: rgba(139, 0, 0, 0.15);
+  border-bottom: 2px solid #8b0000;
+}
+
+/* Cards */
+.seo-card {
+  background: #1a1a1a !important;
+  border: 1px solid #2a2a2a !important;
+  border-radius: 12px !important;
+  margin-bottom: 24px;
+}
+
+.seo-card .card-body {
+  padding: 24px;
+}
+
+.section-title {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Page Selector */
+.page-selector {
+  max-width: 300px;
+}
+
+.page-selector label {
+  color: #9ca3af;
+}
+
+.page-selector select {
+  background: #1a1a1a !important;
+  border: 1px solid #2a2a2a !important;
+  color: #ffffff !important;
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.page-selector select:focus {
+  border-color: #8b0000 !important;
+  box-shadow: 0 0 0 3px rgba(139, 0, 0, 0.1) !important;
+}
+
+/* Form Controls */
+.seo-card .form-label {
+  color: #9ca3af;
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
+.seo-card .form-control,
+.seo-card .form-select {
+  background: #0d0d0d !important;
+  border: 1px solid #2a2a2a !important;
+  color: #ffffff !important;
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.seo-card .form-control:focus,
+.seo-card .form-select:focus {
+  border-color: #8b0000 !important;
+  box-shadow: 0 0 0 3px rgba(139, 0, 0, 0.1) !important;
+  background: #0d0d0d !important;
+}
+
+.seo-card .form-control::placeholder {
+  color: #6b7280;
+}
+
+.seo-card .form-text {
+  color: #6b7280;
+  font-size: 0.75rem;
+  margin-top: 4px;
+}
+
+.seo-card .form-control[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.seo-card .form-control[type="number"]::-webkit-outer-spin-button,
+.seo-card .form-control[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Audit Results */
+.audit-issue {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 8px 12px;
+  margin-bottom: 6px;
+  background: #0d0d0d;
+  border-radius: 6px;
+  border-left: 3px solid #8b0000;
+}
+
+.audit-issue .badge {
+  font-size: 0.6rem;
+  padding: 3px 8px;
+}
+
+/* Code Tag */
+code {
+  background: #0d0d0d;
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #d4af37;
+  font-size: 0.8rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .management-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .seo-tabs .nav-item .nav-link {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+
+  .seo-card .card-body {
+    padding: 16px;
+  }
+
+  .page-selector {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .seo-tabs .nav-item .nav-link {
+    padding: 6px 8px;
+    font-size: 0.7rem;
+  }
+}
+/* ============================================
+   SEO MANAGEMENT - AUDIT SECTION FIX
+   ============================================ */
+
+/* Audit Score */
+.seo-card .text-center {
+  color: #ffffff !important;
+}
+
+.seo-card .text-muted {
+  color: #9ca3af !important;
+}
+
+/* Audit Results - Text Colors */
+.seo-card p {
+  color: #e5e7eb !important;
+}
+
+.seo-card p strong {
+  color: #ffffff !important;
+}
+
+/* Audit Issues */
+.audit-issue {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  background: #0d0d0d;
+  border-radius: 6px;
+  border-left: 3px solid #8b0000;
+}
+
+.audit-issue .badge {
+  font-size: 0.6rem;
+  padding: 4px 10px;
+  border-radius: 4px;
+  color: #ffffff !important;
+}
+
+.audit-issue .badge.bg-danger {
+  background-color: #dc3545 !important;
+}
+
+.audit-issue .badge.bg-warning {
+  background-color: #f59e0b !important;
+  color: #1a1a1a !important;
+}
+
+.audit-issue .badge.bg-info {
+  background-color: #0dcaf0 !important;
+  color: #1a1a1a !important;
+}
+
+.audit-issue span {
+  color: #e5e7eb !important;
+}
+
+.audit-issue .text-muted {
+  color: #6b7280 !important;
+}
+
+/* Score Colors */
+.score-perfect {
+  color: #10b981 !important;
+}
+
+.score-good {
+  color: #f59e0b !important;
+}
+
+.score-poor {
+  color: #ef4444 !important;
+}
+
+/* Audit Cards */
+.seo-card .card-body {
+  color: #e5e7eb !important;
+}
+
+.seo-card .card-body .row .col-md-6 p {
+  color: #e5e7eb !important;
+}
+
+.seo-card .card-body .row .col-md-6 p strong {
+  color: #ffffff !important;
+}

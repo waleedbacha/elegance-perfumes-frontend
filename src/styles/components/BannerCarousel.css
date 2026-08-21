@@ -1,0 +1,561 @@
+/* BannerCarousel.css - Professional Styles with Animations */
+
+.banner-carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #0a0a0a;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Container with smooth transitions */
+.banner-carousel-container {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+  width: 100%;
+}
+
+.banner-slide {
+  min-width: 100%;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.banner-link {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Image Wrapper */
+.banner-image-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Image with zoom animation on hover */
+.banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 6s ease;
+}
+
+.banner-slide.active .banner-image {
+  animation: bannerZoom 8s ease-in-out infinite alternate;
+}
+
+@keyframes bannerZoom {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+/* Gradient Overlay - Professional look */
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.2) 50%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  padding: 20px;
+}
+
+/* Content with fade animation */
+.banner-content {
+  text-align: center;
+  color: #ffffff;
+  max-width: 600px;
+  padding: 20px;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.banner-slide.active .banner-content {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Title with text shadow for readability */
+.banner-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.5px;
+}
+
+.banner-title span {
+  color: #d4af37;
+}
+
+.banner-subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+  opacity: 0.9;
+  letter-spacing: 0.3px;
+}
+
+/* CTA Button with glow effect */
+.banner-cta {
+  display: inline-block;
+  padding: 10px 32px;
+  background: #8b0000;
+  color: #ffffff;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(139, 0, 0, 0.4);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.banner-cta:hover {
+  background: #a00000;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 25px rgba(139, 0, 0, 0.6);
+}
+
+/* Professional Arrows */
+.banner-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.4);
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+  backdrop-filter: blur(4px);
+}
+
+.banner-arrow:hover {
+  background: rgba(139, 0, 0, 0.8);
+  border-color: rgba(139, 0, 0, 0.8);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.banner-arrow:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.banner-arrow.prev {
+  left: 20px;
+}
+
+.banner-arrow.next {
+  right: 20px;
+}
+
+/* Professional Dots */
+.banner-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.banner-dot {
+  width: 10px;
+  height: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.banner-dot:hover {
+  border-color: #ffffff;
+  transform: scale(1.2);
+}
+
+.banner-dot.active {
+  background: #8b0000;
+  border-color: #8b0000;
+  transform: scale(1.2);
+  box-shadow: 0 0 15px rgba(139, 0, 0, 0.5);
+}
+
+/* Progress Bar */
+.banner-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.2);
+  z-index: 10;
+  overflow: hidden;
+}
+
+.banner-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #8b0000, #d4af37);
+  transition: width 0.5s ease;
+  border-radius: 0 2px 2px 0;
+}
+
+/* Auto-play Toggle */
+.banner-autoplay-toggle {
+  position: absolute;
+  bottom: 60px;
+  right: 20px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+  backdrop-filter: blur(4px);
+}
+
+.banner-autoplay-toggle:hover {
+  background: rgba(139, 0, 0, 0.8);
+  transform: scale(1.1);
+}
+
+/* Loading State */
+.banner-carousel-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  background: #0a0a0a;
+  border-radius: 12px;
+}
+
+.banner-carousel-loading .spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #2a2a2a;
+  border-top: 3px solid #8b0000;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .banner-title {
+    font-size: 1.6rem;
+  }
+
+  .banner-subtitle {
+    font-size: 1rem;
+  }
+
+  .banner-arrow {
+    width: 34px;
+    height: 34px;
+  }
+
+  .banner-arrow.prev {
+    left: 12px;
+  }
+
+  .banner-arrow.next {
+    right: 12px;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+  .banner-carousel {
+    border-radius: 8px;
+  }
+
+  .banner-image-wrapper {
+    height: 140px !important;
+  }
+
+  .banner-title {
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+  }
+
+  .banner-subtitle {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+  }
+
+  .banner-content {
+    padding: 10px;
+  }
+
+  .banner-cta {
+    padding: 6px 18px;
+    font-size: 0.75rem;
+  }
+
+  .banner-arrow {
+    width: 28px;
+    height: 28px;
+  }
+
+  .banner-arrow.prev {
+    left: 8px;
+  }
+
+  .banner-arrow.next {
+    right: 8px;
+  }
+
+  .banner-dots {
+    bottom: 12px;
+    gap: 6px;
+  }
+
+  .banner-dot {
+    width: 7px;
+    height: 7px;
+  }
+
+  .banner-autoplay-toggle {
+    bottom: 45px;
+    right: 10px;
+    width: 26px;
+    height: 26px;
+  }
+
+  .banner-autoplay-toggle svg {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+  .banner-image-wrapper {
+    height: 120px !important;
+  }
+
+  .banner-title {
+    font-size: 1rem;
+  }
+
+  .banner-subtitle {
+    font-size: 0.75rem;
+    margin-bottom: 6px;
+  }
+
+  .banner-cta {
+    padding: 4px 14px;
+    font-size: 0.65rem;
+  }
+
+  .banner-arrow {
+    width: 24px;
+    height: 24px;
+  }
+
+  .banner-arrow svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .banner-dots {
+    bottom: 8px;
+    gap: 4px;
+  }
+
+  .banner-dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .banner-autoplay-toggle {
+    bottom: 35px;
+    right: 8px;
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+/* Slide enter animation */
+.banner-slide {
+  animation: slideEnter 0.6s ease forwards;
+}
+
+@keyframes slideEnter {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Pulse animation for CTA */
+.banner-cta {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    box-shadow: 0 4px 15px rgba(139, 0, 0, 0.4);
+  }
+  50% {
+    box-shadow: 0 4px 25px rgba(139, 0, 0, 0.7);
+  }
+}
+/* BannerManagement.css - Add these styles */
+
+/* Status Cell */
+.status-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Toggle Button */
+.action-btn.toggle {
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.action-btn.toggle.active {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+}
+
+.action-btn.toggle.active:hover {
+  background: rgba(16, 185, 129, 0.25);
+  transform: scale(1.1);
+}
+
+.action-btn.toggle.inactive {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+}
+
+.action-btn.toggle.inactive:hover {
+  background: rgba(239, 68, 68, 0.25);
+  transform: scale(1.1);
+}
+
+.action-btn.toggle:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* Small spinner for toggle */
+.spinner-sm {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #2a2a2a;
+  border-top: 2px solid #8b0000;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Action Buttons Container */
+.action-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+/* Tooltip for toggle button */
+.action-btn.toggle {
+  position: relative;
+}
+
+.action-btn.toggle:hover::after {
+  content: attr(title);
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1a1a1a;
+  color: #ffffff;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  white-space: nowrap;
+  z-index: 10;
+}
