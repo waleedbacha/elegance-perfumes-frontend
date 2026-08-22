@@ -136,8 +136,8 @@ const Navbar = () => {
         <Container fluid className="px-3 px-md-4">
           {/* Logo */}
           <BsNavbar.Brand as={Link} to="/" className="brand-text">
-            <span className="brand-white">REVERIE</span>
-            <span className="brand-red">PERFUMES</span>
+            <span className="brand-white">W&A</span>
+            <span className="brand-red"> PERFUMES</span>
           </BsNavbar.Brand>
 
           {/* Desktop Navigation - Center */}

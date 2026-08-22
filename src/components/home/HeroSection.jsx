@@ -62,7 +62,7 @@ const HeroSection = () => {
       { icon: "✓", label: "Secure Payment", subLabel: "100% Safe" },
     ],
     backgroundImage: {
-      url: "https://images.unsplash.com/photo-1594035910387-fea47794261f?w=1920&h=1080&fit=crop",
+      url: "https://res.cloudinary.com/dcjhzgigb/image/upload/v1785340637/elegance-perfumes/hero/fhxc5eg1cqenhkrkyvmz.png",
     },
   };
 
