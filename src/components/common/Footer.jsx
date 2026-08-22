@@ -59,13 +59,13 @@ const Footer = () => {
                 <h4 className="footer-heading">Support</h4>
                 <ul className="footer-links">
                   <li>
-                    <Link to="/faq">FAQ</Link>
+                    <Link to="/privacy">FAQ</Link>
                   </li>
                   <li>
-                    <Link to="/returns">Returns</Link>
+                    <Link to="/terms#returns">Returns</Link>
                   </li>
                   <li>
-                    <Link to="/shipping">Shipping</Link>
+                    <Link to="/terms#shipping">Shipping</Link>
                   </li>
                   <li>
                     <Link to="/privacy">Privacy</Link>

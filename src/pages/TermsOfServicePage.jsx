@@ -49,7 +49,7 @@ const TermsOfServicePage = () => {
               <p className="hero-subtitle">
                 Please read these terms carefully before using our services.
               </p>
-              <p className="hero-date">Last Updated: January 2024</p>
+              <p className="hero-date">Last Updated: August 2026</p>
             </motion.div>
           </Container>
         </section>

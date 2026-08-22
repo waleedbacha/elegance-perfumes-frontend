@@ -24,7 +24,7 @@ const PrivacyPolicyPage = () => {
               We are committed to protecting your personal information and being
               transparent about how we use it.
             </p>
-            <p className="hero-date">Last Updated: January 2024</p>
+            <p className="hero-date">Last Updated: August 2026</p>
           </motion.div>
         </Container>
       </section>
