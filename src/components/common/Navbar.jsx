@@ -118,7 +118,7 @@ const Navbar = () => {
       <BsNavbar className="navbar-elegance" fixed="top">
         <Container fluid className="px-3 px-md-4">
           <BsNavbar.Brand as={Link} to="/" className="brand-text">
-            <span className="brand-white">REVERIE</span>
+            <span className="brand-white">ElEGENCE</span>
             <span className="brand-red">PERFUMES</span>
           </BsNavbar.Brand>
         </Container>

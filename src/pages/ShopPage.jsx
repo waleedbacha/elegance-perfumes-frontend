@@ -182,7 +182,11 @@ const ShopPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [showFilters, setShowFilters] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+
+  // ✅ FIX: Separate local search state from URL
+  const [localSearchTerm, setLocalSearchTerm] = useState(searchQuery);
   const [searchTerm, setSearchTerm] = useState(searchQuery);
+
   const [refreshKey, setRefreshKey] = useState(0);
   const [filters, setFilters] = useState({
     category: "",
@@ -194,6 +198,9 @@ const ShopPage = () => {
   });
   const [selectedFilters, setSelectedFilters] = useState([]);
   const hasFetched = useRef(false);
+
+  // ✅ Debounce timer ref
+  const searchDebounceTimer = useRef(null);
 
   // Categories and Brands (for filters)
   const categories = ["men", "women", "unisex", "niche"];
@@ -268,7 +275,7 @@ const ShopPage = () => {
     }
   }, [dispatch, isAuthenticated]);
 
-  // Fetch products
+  // ✅ Fetch products - uses searchTerm (not localSearchTerm)
   const fetchProducts = useCallback(() => {
     const params = {
       page: currentPage,
@@ -301,10 +308,11 @@ const ShopPage = () => {
     }
   }, [fetchProducts]);
 
-  // Update search term from URL
+  // ✅ Update searchTerm from URL only on initial load
   useEffect(() => {
     if (searchQuery) {
       setSearchTerm(searchQuery);
+      setLocalSearchTerm(searchQuery);
     }
   }, [searchQuery]);
 
@@ -376,12 +384,58 @@ const ShopPage = () => {
     );
   };
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    if (searchTerm.trim()) {
-      navigate(`/shop?search=${encodeURIComponent(searchTerm.trim())}`);
-      setCurrentPage(1);
+  // ✅ FIX: Handle search input change - ONLY updates local state, NO navigation
+  const handleSearchChange = (e) => {
+    const value = e.target.value;
+    setLocalSearchTerm(value);
+
+    // Clear previous timer
+    if (searchDebounceTimer.current) {
+      clearTimeout(searchDebounceTimer.current);
     }
+
+    // ✅ Only update searchTerm after user stops typing (500ms delay)
+    searchDebounceTimer.current = setTimeout(() => {
+      setSearchTerm(value);
+      setCurrentPage(1);
+      // ✅ Update URL only after debounce
+      if (value.trim()) {
+        navigate(`/shop?search=${encodeURIComponent(value.trim())}`, {
+          replace: true,
+        });
+      } else {
+        navigate("/shop", { replace: true });
+      }
+    }, 500);
+  };
+
+  // ✅ Handle search on Enter key - immediate search
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+
+    // Clear any pending debounce
+    if (searchDebounceTimer.current) {
+      clearTimeout(searchDebounceTimer.current);
+      searchDebounceTimer.current = null;
+    }
+
+    const value = localSearchTerm.trim();
+    setSearchTerm(value);
+    setCurrentPage(1);
+
+    if (value) {
+      navigate(`/shop?search=${encodeURIComponent(value)}`, { replace: true });
+    } else {
+      navigate("/shop", { replace: true });
+    }
+  };
+
+  // ✅ Clear search
+  const handleClearSearch = () => {
+    setLocalSearchTerm("");
+    setSearchTerm("");
+    setCurrentPage(1);
+    navigate("/shop", { replace: true });
   };
 
   const handleFilterChange = (key, value) => {
@@ -600,7 +654,6 @@ const ShopPage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              {/* ✅ FIX: Only render the title once with proper highlighting */}
               <h1>
                 {(() => {
                   const title = shopTitle || "Shop Fragrances";
@@ -619,16 +672,26 @@ const ShopPage = () => {
               </h1>
               <p>{shopSubtitle}</p>
 
-              {/* Search Bar */}
-              <Form onSubmit={handleSearch} className="shop-search-form">
+              {/* ✅ FIX: Search Bar with debounce - NO full page reload */}
+              <Form onSubmit={handleSearchSubmit} className="shop-search-form">
                 <InputGroup>
                   <Form.Control
                     type="text"
                     placeholder={shopSearchPlaceholder}
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
+                    value={localSearchTerm}
+                    onChange={handleSearchChange}
                     className="shop-search-input"
                   />
+                  {localSearchTerm && (
+                    <button
+                      type="button"
+                      className="shop-search-clear-btn"
+                      onClick={handleClearSearch}
+                      aria-label="Clear search"
+                    >
+                      <X size={18} />
+                    </button>
+                  )}
                   <button type="submit" className="shop-search-btn">
                     <Search size={20} />
                   </button>
