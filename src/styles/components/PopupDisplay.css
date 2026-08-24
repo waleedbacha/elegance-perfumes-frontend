@@ -1,0 +1,839 @@
+/* frontend/src/styles/components/PopupDisplay.css */
+
+/* ============================================
+   POPUP DISPLAY - FULLY RESPONSIVE
+   ============================================ */
+
+.popup-display-modal .modal-content {
+  background: transparent;
+  border: none;
+  border-radius: 14px;
+  max-width: 460px;
+  margin: 0 auto;
+  animation: popupSlideUp 0.4s ease forwards;
+}
+
+.popup-display-modal.closing .modal-content {
+  animation: popupSlideDown 0.25s ease forwards;
+}
+
+.popup-dialog {
+  max-width: 460px;
+  margin: 0 auto;
+}
+
+.popup-dialog.small {
+  max-width: 360px;
+}
+
+.popup-dialog.medium {
+  max-width: 460px;
+}
+
+.popup-dialog.large {
+  max-width: 560px;
+}
+
+@keyframes popupSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes popupSlideDown {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+}
+
+.popup-wrapper {
+  background: #1a1a1a;
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(139, 0, 0, 0.25);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.7);
+}
+
+.popup-wrapper.mobile {
+  border-radius: 10px;
+}
+
+/* ============================================
+   CLOSE BUTTON
+   ============================================ */
+
+.popup-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(4px);
+}
+
+.popup-close-btn:hover {
+  background: rgba(139, 0, 0, 0.7);
+  color: #ffffff;
+  transform: rotate(90deg);
+}
+
+/* ============================================
+   IMAGE SECTION
+   ============================================ */
+
+.popup-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+}
+
+.popup-image-wrapper.mobile {
+  height: 100px;
+}
+
+.popup-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.popup-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(139, 0, 0, 0.85);
+  color: #ffffff;
+  padding: 3px 10px;
+  border-radius: 50px;
+  font-size: 0.6rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.popup-badge svg {
+  width: 12px;
+  height: 12px;
+}
+
+/* ============================================
+   CONTENT
+   ============================================ */
+
+.popup-content {
+  padding: 22px 28px 26px;
+  text-align: center;
+}
+
+.popup-content.mobile {
+  padding: 14px 16px 16px;
+}
+
+.popup-content.no-image {
+  padding: 26px 28px 30px;
+}
+
+.popup-content.no-image.mobile {
+  padding: 16px 18px 20px;
+}
+
+.popup-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(139, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8b0000;
+  margin: 0 auto 6px;
+}
+
+.popup-title {
+  font-family: "Cinzel", serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 2px;
+  line-height: 1.2;
+}
+
+.popup-title.mobile {
+  font-size: 0.95rem;
+}
+
+.popup-subtitle {
+  font-size: 0.9rem;
+  color: #d1d5db;
+  margin-bottom: 2px;
+  font-weight: 500;
+}
+
+.popup-subtitle.mobile {
+  font-size: 0.75rem;
+}
+
+.popup-description {
+  font-size: 0.8rem;
+  color: #9ca3af;
+  margin-bottom: 14px;
+  line-height: 1.4;
+}
+
+.popup-description.mobile {
+  font-size: 0.65rem;
+  margin-bottom: 10px;
+}
+
+/* ============================================
+   COUPON CODE
+   ============================================ */
+
+.coupon-code-wrapper {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+}
+
+.coupon-code-wrapper.mobile {
+  padding: 8px 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+.coupon-code-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+}
+
+.coupon-code-label {
+  font-size: 0.65rem;
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+.coupon-code-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(139, 0, 0, 0.08);
+  border: 1px dashed rgba(139, 0, 0, 0.25);
+  border-radius: 6px;
+  padding: 6px 14px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.coupon-code {
+  font-family: "Courier New", monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #d4af37;
+  letter-spacing: 1.5px;
+}
+
+.coupon-copy-btn {
+  background: rgba(139, 0, 0, 0.15);
+  border: none;
+  color: #ffffff;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 0.6rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.coupon-copy-btn:hover {
+  background: #8b0000;
+  color: #ffffff;
+}
+
+/* ============================================
+   ACTIONS
+   ============================================ */
+
+.popup-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.popup-actions.mobile {
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.popup-primary-btn {
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.popup-primary-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(139, 0, 0, 0.25);
+}
+
+.popup-primary-btn.mobile {
+  padding: 8px 14px;
+  font-size: 0.7rem;
+  border-radius: 6px;
+  gap: 6px;
+}
+
+.popup-primary-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.popup-primary-btn.mobile svg {
+  width: 13px;
+  height: 13px;
+}
+
+.popup-secondary-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 8px 20px;
+  color: #9ca3af;
+  font-weight: 500;
+  font-size: 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.popup-secondary-btn:hover {
+  background: rgba(255, 255, 255, 0.04);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.popup-secondary-btn.mobile {
+  padding: 4px 14px;
+  font-size: 0.6rem;
+  border-radius: 6px;
+  border: none;
+}
+
+.popup-secondary-btn.mobile:hover {
+  background: transparent;
+  color: #9ca3af;
+}
+
+.popup-terms {
+  font-size: 0.55rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+.popup-terms.mobile {
+  font-size: 0.45rem;
+}
+
+/* ============================================
+   RESPONSIVE - SUPER COMPACT MOBILE
+   ============================================ */
+
+/* Tablets */
+@media (max-width: 991px) {
+  .popup-display-modal .modal-content {
+    max-width: 420px;
+  }
+
+  .popup-content {
+    padding: 18px 22px 22px;
+  }
+
+  .popup-title {
+    font-size: 1.1rem;
+  }
+}
+
+/* Mobile Phones */
+@media (max-width: 767px) {
+  .popup-display-modal .modal-content {
+    max-width: 92%;
+    border-radius: 10px;
+  }
+
+  .popup-dialog {
+    max-width: 92%;
+  }
+
+  .popup-wrapper {
+    border-radius: 10px;
+  }
+
+  .popup-wrapper.mobile {
+    border-radius: 8px;
+  }
+
+  .popup-image-wrapper {
+    height: 100px;
+  }
+
+  .popup-image-wrapper.mobile {
+    height: 80px;
+  }
+
+  .popup-content {
+    padding: 12px 14px 14px;
+  }
+
+  .popup-content.mobile {
+    padding: 10px 12px 12px;
+  }
+
+  .popup-content.no-image {
+    padding: 14px 14px 16px;
+  }
+
+  .popup-content.no-image.mobile {
+    padding: 12px 12px 14px;
+  }
+
+  .popup-close-btn {
+    top: 6px;
+    right: 6px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .popup-close-btn svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .popup-title {
+    font-size: 0.9rem;
+  }
+
+  .popup-title.mobile {
+    font-size: 0.8rem;
+  }
+
+  .popup-subtitle {
+    font-size: 0.75rem;
+  }
+
+  .popup-subtitle.mobile {
+    font-size: 0.65rem;
+  }
+
+  .popup-description {
+    font-size: 0.65rem;
+    margin-bottom: 8px;
+  }
+
+  .popup-description.mobile {
+    font-size: 0.55rem;
+    margin-bottom: 6px;
+  }
+
+  .coupon-code-wrapper {
+    padding: 6px 8px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+  }
+
+  .coupon-code-wrapper.mobile {
+    padding: 4px 6px;
+    margin-bottom: 6px;
+  }
+
+  .coupon-code-label {
+    font-size: 0.5rem;
+  }
+
+  .coupon-code-box {
+    padding: 4px 10px;
+    gap: 6px;
+  }
+
+  .coupon-code {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+  }
+
+  .coupon-copy-btn {
+    font-size: 0.5rem;
+    padding: 2px 8px;
+  }
+
+  .coupon-copy-btn svg {
+    width: 10px;
+    height: 10px;
+  }
+
+  .popup-actions {
+    gap: 4px;
+    margin-bottom: 4px;
+  }
+
+  .popup-primary-btn {
+    padding: 6px 12px;
+    font-size: 0.65rem;
+    border-radius: 6px;
+    gap: 4px;
+  }
+
+  .popup-primary-btn svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .popup-secondary-btn {
+    padding: 3px 12px;
+    font-size: 0.55rem;
+    border-radius: 6px;
+  }
+
+  .popup-terms {
+    font-size: 0.45rem;
+  }
+
+  .popup-badge {
+    font-size: 0.5rem;
+    padding: 2px 8px;
+    top: 6px;
+    left: 6px;
+  }
+}
+
+/* Small Mobile Phones */
+@media (max-width: 575px) {
+  .popup-display-modal .modal-content {
+    max-width: 96%;
+    border-radius: 8px;
+  }
+
+  .popup-dialog {
+    max-width: 96%;
+  }
+
+  .popup-wrapper {
+    border-radius: 8px;
+  }
+
+  .popup-image-wrapper {
+    height: 70px;
+  }
+
+  .popup-image-wrapper.mobile {
+    height: 60px;
+  }
+
+  .popup-content {
+    padding: 8px 10px 10px;
+  }
+
+  .popup-content.mobile {
+    padding: 6px 8px 8px;
+  }
+
+  .popup-content.no-image {
+    padding: 10px 10px 12px;
+  }
+
+  .popup-content.no-image.mobile {
+    padding: 8px 8px 10px;
+  }
+
+  .popup-close-btn {
+    top: 4px;
+    right: 4px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .popup-close-btn svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .popup-icon {
+    width: 28px;
+    height: 28px;
+    margin-bottom: 4px;
+  }
+
+  .popup-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .popup-title {
+    font-size: 0.75rem;
+  }
+
+  .popup-title.mobile {
+    font-size: 0.7rem;
+  }
+
+  .popup-subtitle {
+    font-size: 0.65rem;
+  }
+
+  .popup-subtitle.mobile {
+    font-size: 0.55rem;
+  }
+
+  .popup-description {
+    font-size: 0.55rem;
+    margin-bottom: 6px;
+  }
+
+  .popup-description.mobile {
+    font-size: 0.5rem;
+    margin-bottom: 4px;
+    display: none;
+  }
+
+  .coupon-code-wrapper {
+    padding: 4px 6px;
+    margin-bottom: 6px;
+  }
+
+  .coupon-code-wrapper.mobile {
+    padding: 3px 4px;
+    margin-bottom: 4px;
+  }
+
+  .coupon-code-label {
+    font-size: 0.45rem;
+  }
+
+  .coupon-code-box {
+    padding: 2px 8px;
+    gap: 4px;
+  }
+
+  .coupon-code {
+    font-size: 0.65rem;
+  }
+
+  .coupon-copy-btn {
+    font-size: 0.4rem;
+    padding: 1px 6px;
+  }
+
+  .coupon-copy-btn svg {
+    width: 8px;
+    height: 8px;
+  }
+
+  .popup-actions {
+    gap: 3px;
+    margin-bottom: 3px;
+  }
+
+  .popup-primary-btn {
+    padding: 4px 10px;
+    font-size: 0.55rem;
+    border-radius: 4px;
+    gap: 4px;
+  }
+
+  .popup-primary-btn svg {
+    width: 10px;
+    height: 10px;
+  }
+
+  .popup-secondary-btn {
+    padding: 2px 10px;
+    font-size: 0.45rem;
+    border-radius: 4px;
+  }
+
+  .popup-terms {
+    font-size: 0.4rem;
+  }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 380px) {
+  .popup-display-modal .modal-content {
+    max-width: 98%;
+    border-radius: 6px;
+  }
+
+  .popup-dialog {
+    max-width: 98%;
+  }
+
+  .popup-wrapper {
+    border-radius: 6px;
+  }
+
+  .popup-image-wrapper {
+    height: 50px;
+  }
+
+  .popup-image-wrapper.mobile {
+    height: 40px;
+  }
+
+  .popup-content {
+    padding: 4px 6px 6px;
+  }
+
+  .popup-content.mobile {
+    padding: 3px 4px 4px;
+  }
+
+  .popup-content.no-image {
+    padding: 6px 6px 8px;
+  }
+
+  .popup-title {
+    font-size: 0.65rem;
+  }
+
+  .popup-title.mobile {
+    font-size: 0.6rem;
+  }
+
+  .popup-subtitle {
+    font-size: 0.55rem;
+  }
+
+  .popup-subtitle.mobile {
+    font-size: 0.5rem;
+  }
+
+  .popup-description {
+    display: none;
+  }
+
+  .coupon-code-wrapper {
+    padding: 2px 4px;
+    margin-bottom: 4px;
+  }
+
+  .coupon-code-box {
+    padding: 2px 6px;
+  }
+
+  .coupon-code {
+    font-size: 0.55rem;
+  }
+
+  .coupon-copy-btn {
+    font-size: 0.35rem;
+    padding: 1px 4px;
+  }
+
+  .popup-primary-btn {
+    padding: 3px 8px;
+    font-size: 0.5rem;
+  }
+
+  .popup-primary-btn svg {
+    width: 8px;
+    height: 8px;
+  }
+
+  .popup-secondary-btn {
+    font-size: 0.4rem;
+    padding: 1px 8px;
+  }
+
+  .popup-terms {
+    font-size: 0.35rem;
+  }
+
+  .popup-badge {
+    display: none;
+  }
+}
+
+/* ============================================
+   TOUCH DEVICE OPTIMIZATION
+   ============================================ */
+
+@media (hover: none) {
+  .popup-primary-btn:hover {
+    transform: none;
+    background: #8b0000;
+  }
+
+  .popup-secondary-btn:hover {
+    background: transparent;
+    color: #9ca3af;
+  }
+
+  .coupon-copy-btn:hover {
+    background: rgba(139, 0, 0, 0.15);
+    color: #ffffff;
+  }
+
+  .popup-close-btn:hover {
+    background: rgba(0, 0, 0, 0.5);
+    color: #9ca3af;
+    transform: none;
+  }
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .popup-display-modal .modal-content,
+  .popup-display-modal.closing .modal-content {
+    animation: none;
+  }
+
+  .popup-primary-btn,
+  .popup-close-btn {
+    transition: none;
+  }
+
+  .popup-primary-btn:hover {
+    transform: none;
+  }
+
+  .popup-close-btn:hover {
+    transform: none;
+  }
+}

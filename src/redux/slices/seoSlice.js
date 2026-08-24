@@ -11,7 +11,7 @@ const initialState = {
   history: [],
   dashboard: null,
   rankings: null,
-  keywordSuggestions: [],
+  keywordSuggestions: null,
   cannibalization: null,
   keywordAnalysis: null,
   isLoading: false,
@@ -439,29 +439,87 @@ const seoSlice = createSlice({
         state.settings = action.payload;
         state.success = "Settings reset to defaults";
       });
+
+    // ============================================
+    // ✅ SEO DASHBOARD & ANALYTICS - FIXED
+    // ============================================
+
+    // GET SEO DASHBOARD
     builder
       .addCase(getSeoDashboard.pending, (state) => {
         state.isLoading = true;
+        state.error = null;
       })
       .addCase(getSeoDashboard.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.dashboard = action.payload;
+        state.dashboard = action.payload || {};
       })
       .addCase(getSeoDashboard.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
+        state.dashboard = {};
+      })
+
+      // ✅ GET KEYWORD RANKINGS - FIXED
+      .addCase(getKeywordRankings.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
       })
       .addCase(getKeywordRankings.fulfilled, (state, action) => {
-        state.rankings = action.payload;
+        state.isLoading = false;
+        // The payload IS the data, not wrapped in a "data" property
+        state.rankings = action.payload || { totalKeywords: 0, keywords: [] };
+      })
+      .addCase(getKeywordRankings.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+        console.error("❌ Rankings rejected:", action.payload);
+        state.rankings = { totalKeywords: 0, keywords: [] };
+      })
+
+      // ✅ GET KEYWORD SUGGESTIONS - FIXED
+      .addCase(getKeywordSuggestions.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
       })
       .addCase(getKeywordSuggestions.fulfilled, (state, action) => {
-        state.keywordSuggestions = action.payload;
+        state.isLoading = false;
+        state.keywordSuggestions = action.payload || { suggestions: [] };
+      })
+      .addCase(getKeywordSuggestions.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+        state.keywordSuggestions = { suggestions: [] };
+      })
+
+      // ✅ GET CANNIBALIZATION - FIXED
+      .addCase(getKeywordCannibalization.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
       })
       .addCase(getKeywordCannibalization.fulfilled, (state, action) => {
-        state.cannibalization = action.payload;
+        state.isLoading = false;
+        state.cannibalization = action.payload || { issues: [] };
+      })
+      .addCase(getKeywordCannibalization.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+        state.cannibalization = { issues: [] };
+      })
+
+      // ✅ ANALYZE KEYWORD DIFFICULTY - FIXED
+      .addCase(analyzeKeywordDifficulty.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
       })
       .addCase(analyzeKeywordDifficulty.fulfilled, (state, action) => {
-        state.keywordAnalysis = action.payload;
+        state.isLoading = false;
+        state.keywordAnalysis = action.payload || {};
+      })
+      .addCase(analyzeKeywordDifficulty.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+        state.keywordAnalysis = null;
       });
   },
 });

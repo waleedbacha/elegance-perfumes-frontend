@@ -15,6 +15,7 @@ import settingReducer from "./slices/settingSlice";
 import navbarReducer from "./slices/navbarSlice";
 import seoReducer from "./slices/seoSlice";
 import cacheReducer from "./slices/cacheSlice"; // Add this
+import popupReducer from "./slices/popupSlice";
 
 const store = configureStore({
   reducer: {
@@ -34,6 +35,7 @@ const store = configureStore({
     navbar: navbarReducer,
     seo: seoReducer,
     cache: cacheReducer,
+    popups: popupReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

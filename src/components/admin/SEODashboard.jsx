@@ -46,7 +46,9 @@ const SEODashboard = () => {
     cannibalization,
     keywordAnalysis,
     isLoading,
-  } = useSelector((state) => state.seo);
+  } = useSelector((state) => {
+    return state.seo;
+  });
 
   const [searchKeyword, setSearchKeyword] = useState("");
   const [selectedKeyword, setSelectedKeyword] = useState("");
@@ -110,7 +112,11 @@ const SEODashboard = () => {
     return "Low";
   };
 
+  // ✅ FIXED - Handle undefined/null values
   const formatNumber = (num) => {
+    // If num is undefined, null, or not a number, return "0"
+    if (num === undefined || num === null || isNaN(num)) return "0";
+
     if (num >= 1000) return `${(num / 1000).toFixed(1)}K`;
     return num.toString();
   };
@@ -320,7 +326,6 @@ const SEODashboard = () => {
           </Card>
         </Col>
       </Row>
-
       {/* Keyword Rankings */}
       <Row className="g-4 mb-4">
         <Col lg={8}>
@@ -328,9 +333,7 @@ const SEODashboard = () => {
             <Card.Header>
               <div className="d-flex justify-content-between align-items-center">
                 <h5 className="mb-0">🔑 Keyword Rankings</h5>
-                <Badge bg="info">
-                  {data.rankings?.totalKeywords || 0} Keywords
-                </Badge>
+                <Badge bg="info">{rankings?.totalKeywords || 0} Keywords</Badge>
               </div>
             </Card.Header>
             <Card.Body className="p-0">
@@ -347,44 +350,52 @@ const SEODashboard = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {data.rankings?.keywords?.map((keyword, index) => (
-                      <tr key={index}>
-                        <td>{keyword.keyword}</td>
-                        <td>
-                          <span className="position-badge">
-                            #{keyword.position}
-                          </span>
-                        </td>
-                        <td>{getTrendIcon(keyword.trend)}</td>
-                        <td>{formatNumber(keyword.searchVolume)}</td>
-                        <td>
-                          <Badge
-                            style={{
-                              background: getDifficultyColor(
-                                keyword.difficulty,
-                              ),
-                              color: "#fff",
-                            }}
-                          >
-                            {getDifficultyLabel(keyword.difficulty)}
-                          </Badge>
-                        </td>
-                        <td>
-                          <Button
-                            size="sm"
-                            variant="outline-primary"
-                            onClick={() => {
-                              setSearchKeyword(keyword.keyword);
-                              dispatch(
-                                analyzeKeywordDifficulty(keyword.keyword),
-                              );
-                            }}
-                          >
-                            <Search size={14} />
-                          </Button>
+                    {rankings?.keywords?.length > 0 ? (
+                      rankings.keywords.map((keyword, index) => (
+                        <tr key={index}>
+                          <td>{keyword.keyword}</td>
+                          <td>
+                            <span className="position-badge">
+                              #{keyword.position}
+                            </span>
+                          </td>
+                          <td>{getTrendIcon(keyword.trend)}</td>
+                          <td>{formatNumber(keyword.searchVolume)}</td>
+                          <td>
+                            <Badge
+                              style={{
+                                background: getDifficultyColor(
+                                  keyword.difficulty,
+                                ),
+                                color: "#fff",
+                              }}
+                            >
+                              {getDifficultyLabel(keyword.difficulty)}
+                            </Badge>
+                          </td>
+                          <td>
+                            <Button
+                              size="sm"
+                              variant="outline-primary"
+                              onClick={() => {
+                                setSearchKeyword(keyword.keyword);
+                                dispatch(
+                                  analyzeKeywordDifficulty(keyword.keyword),
+                                );
+                              }}
+                            >
+                              <Search size={14} />
+                            </Button>
+                          </td>
+                        </tr>
+                      ))
+                    ) : (
+                      <tr>
+                        <td colSpan="6" className="text-center py-4 text-muted">
+                          No keyword data available
                         </td>
                       </tr>
-                    ))}
+                    )}
                   </tbody>
                 </table>
               </div>
@@ -399,8 +410,8 @@ const SEODashboard = () => {
               <h5 className="mb-0">⚠️ Keyword Cannibalization</h5>
             </Card.Header>
             <Card.Body>
-              {cannibalization?.data?.issues?.length > 0 ? (
-                cannibalization.data.issues.map((issue, index) => (
+              {cannibalization?.issues?.length > 0 ? (
+                cannibalization.issues.map((issue, index) => (
                   <div key={index} className="cannibalization-item">
                     <div className="cannibalization-header">
                       <span className="keyword">{issue.keyword}</span>

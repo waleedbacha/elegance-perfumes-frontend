@@ -33,6 +33,7 @@ import {
   ChevronRight,
   Info,
   HardDrive,
+  Popcorn,
 } from "lucide-react";
 import toast from "react-hot-toast";
 import "../styles/pages/AdminDashboard.css";
@@ -61,6 +62,7 @@ import NavbarManagement from "../components/admin/NavbarManagement";
 import SEOManagement from "../components/admin/SEOManagement";
 import SEODashboard from "../components/admin/SEODashboard";
 import CacheManagement from "../components/admin/CacheManagement";
+import PopupManagement from "../components/admin/PopupManagement";
 
 const AdminDashboard = () => {
   const navigate = useNavigate();
@@ -249,6 +251,12 @@ const AdminDashboard = () => {
       icon: <HardDrive size={20} />,
       path: "/admin/cache",
     },
+    {
+      id: "popups", // ✅ Added Popups
+      label: "Popups",
+      icon: <Popcorn size={18} />,
+      path: "/admin/popups",
+    },
   ];
 
   const renderContent = () => {
@@ -291,6 +299,8 @@ const AdminDashboard = () => {
         return <SEODashboard />;
       case "cache":
         return <CacheManagement />;
+      case "popups":
+        return <PopupManagement />;
       default:
         return <DashboardContent />;
     }

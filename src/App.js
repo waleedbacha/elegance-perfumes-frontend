@@ -32,6 +32,7 @@ import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import TermsOfServicePage from "./pages/TermsOfServicePage";
+import PopupDisplay from "./components/common/PopupDisplay";
 
 function App() {
   const dispatch = useDispatch();
@@ -171,6 +172,8 @@ function App() {
           </Routes>
         </main>
         {!isAdminRoute && <Footer />}
+        {/* ✅ Discount Popup - Shows on all pages */}
+        {!isAdminRoute && <PopupDisplay />}
       </div>
     </GoogleOAuthProvider>
   );
