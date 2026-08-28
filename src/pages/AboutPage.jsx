@@ -98,7 +98,7 @@ const AboutPage = () => {
       : true;
 
   // Hero Section
-  const heroBadge = settings?.about_hero_badge || "✦ About Elegance";
+  const heroBadge = settings?.about_hero_badge || "✦ About HAMAMA";
   const heroTitle =
     settings?.about_hero_title || "Crafting Luxury Fragrances Since 2015";
   const heroSubtitle =
@@ -117,7 +117,7 @@ const AboutPage = () => {
   const storyTitle = settings?.about_story_title || "The Art of Perfumery";
   const storyText1 =
     settings?.about_story_text_1 ||
-    "Elegance Perfumes was born from a simple yet profound belief: fragrance is the invisible luxury that defines who you are. What started as a passion project in a small studio has grown into Pakistan's premier destination for luxury fragrances.";
+    "HAMAMA Perfumes was born from a simple yet profound belief: fragrance is the invisible luxury that defines who you are. What started as a passion project in a small studio has grown into Pakistan's premier destination for luxury fragrances.";
   const storyText2 =
     settings?.about_story_text_2 ||
     "We travel the world to source the rarest and most exquisite ingredients—from the lush fields of Grasse to the exotic markets of Dubai. Our master perfumers blend these precious materials with artistry and precision to create scents that are truly unforgettable.";
@@ -160,7 +160,7 @@ const AboutPage = () => {
   // Testimonial Section
   const testimonialText =
     settings?.about_testimonial_text ||
-    "Elegance Perfumes has completely transformed my understanding of luxury fragrances. Every scent tells a story and the quality is unmatched. It's not just perfume; it's an experience.";
+    "HAMAMA Perfumes has completely transformed my understanding of luxury fragrances. Every scent tells a story and the quality is unmatched. It's not just perfume; it's an experience.";
   const testimonialAuthorName =
     settings?.about_testimonial_author_name || "Zara Malik";
   const testimonialAuthorTitle =
@@ -215,7 +215,7 @@ const AboutPage = () => {
     {
       icon: "Mail",
       title: "Email Us",
-      details: ["elegance.myperfume@gmail.com", "info@elegance.pk"],
+      details: ["hamama.myperfume@gmail.com", "info@hamama.pk"],
     },
     {
       icon: "Phone",
@@ -317,8 +317,8 @@ const AboutPage = () => {
     <>
       <SEO
         title="About Us"
-        description="Learn about Elegance Perfumes - Pakistan's premier luxury fragrance destination. Discover our story, values, and commitment to authentic scents."
-        keywords="about perfume store, luxury fragrance brand, perfume story, Elegance Perfumes"
+        description="Learn about HAMAMA Perfumes - Pakistan's premier luxury fragrance destination. Discover our story, values, and commitment to authentic scents."
+        keywords="about perfume store, luxury fragrance brand, perfume story, HAMAMA Perfumes"
         url="/about"
       />
       <div className="about-page">

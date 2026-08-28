@@ -23,7 +23,7 @@ const HomePage = () => {
     <>
       <SEO
         title="Home"
-        description="Discover luxury fragrances at Elegance Perfumes. Shop authentic perfumes for men and women in Pakistan. Premium scents, fast delivery."
+        description="Discover luxury fragrances at HAMAMA Perfumes. Shop authentic perfumes for men and women in Pakistan. Premium scents, fast delivery."
         keywords="luxury perfumes, premium fragrances, perfume store Pakistan, authentic perfumes, men's perfume, women's perfume"
         url="/"
         type="website"

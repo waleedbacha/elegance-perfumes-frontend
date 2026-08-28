@@ -28,8 +28,8 @@ const TermsOfServicePage = () => {
     <>
       <SEO
         title="Terms of Service"
-        description="Read the Terms of Service for Elegance Perfumes. Understand our policies on orders, returns, privacy, and user conduct."
-        keywords="terms of service, perfume terms, Elegance Perfumes policies, legal terms"
+        description="Read the Terms of Service for HAMAMA Perfumes. Understand our policies on orders, returns, privacy, and user conduct."
+        keywords="terms of service, perfume terms, HAMAMA Perfumes policies, legal terms"
         url="/terms"
       />
       <div className="terms-page">
@@ -114,7 +114,7 @@ const TermsOfServicePage = () => {
                       <h2>Acceptance of Terms</h2>
                     </div>
                     <p>
-                      By using Elegance Perfumes website and services, you agree
+                      By using HAMAMA Perfumes website and services, you agree
                       to these Terms of Service. If you do not agree, please do
                       not use our services. You must be at least 18 years old to
                       make a purchase.
@@ -363,7 +363,7 @@ const TermsOfServicePage = () => {
                     <div className="contact-info">
                       <div className="contact-item">
                         <Mail size={18} />
-                        <span>elegance.myperfume@gmail.com</span>
+                        <span>hamama.myperfume@gmail.com</span>
                       </div>
                       <div className="contact-item">
                         <Phone size={18} />

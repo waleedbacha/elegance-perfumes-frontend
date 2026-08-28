@@ -19,7 +19,7 @@ const AboutSettingsManagement = () => {
   );
   const [formData, setFormData] = useState({
     // Hero
-    about_hero_badge: "✦ About Elegance",
+    about_hero_badge: "✦ About HAMAMA",
     about_hero_title: "Crafting Luxury Fragrances Since 2015",
     about_hero_subtitle: "We believe that luxury is an experience...",
     about_hero_btn_primary_text: "Explore Collection",
@@ -85,7 +85,7 @@ const AboutSettingsManagement = () => {
       if (hasAboutSettings) {
         setFormData({
           // Hero
-          about_hero_badge: settings.about_hero_badge || "✦ About Elegance",
+          about_hero_badge: settings.about_hero_badge || "✦ About HAMAMA",
           about_hero_title:
             settings.about_hero_title ||
             "Crafting Luxury Fragrances Since 2015",

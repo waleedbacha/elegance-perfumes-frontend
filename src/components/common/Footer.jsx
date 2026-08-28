@@ -12,7 +12,7 @@ const Footer = () => {
           {/* Brand Column - full width on mobile */}
           <Col lg={4} md={12} className="footer-col footer-col-brand">
             <div className="footer-brand">
-              <span className="brand-white">ELEGANCE</span>
+              <span className="brand-white">HAMAMA</span>
               <span className="brand-red">PERFUMES</span>
             </div>
             <p className="footer-description">
@@ -109,7 +109,7 @@ const Footer = () => {
 
         <div className="footer-bottom">
           <p className="copyright">
-            &copy; {new Date().getFullYear()} Elegance Perfumes. All rights
+            &copy; {new Date().getFullYear()} HAMAMA Perfumes. All rights
             reserved.
           </p>
           <div className="footer-bottom-links">

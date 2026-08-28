@@ -6,10 +6,10 @@ const ForgotPasswordPage = () => {
   return (
     <>
       <Helmet>
-        <title>Forgot Password - Elegance Perfumes</title>
+        <title>Forgot Password - HAMAMA Perfumes</title>
         <meta
           name="description"
-          content="Reset your Elegance Perfumes account password."
+          content="Reset your HAMAMA Perfumes account password."
         />
       </Helmet>
       <ForgotPassword />

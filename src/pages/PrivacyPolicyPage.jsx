@@ -80,7 +80,7 @@ const PrivacyPolicyPage = () => {
                 <div className="privacy-section">
                   <h2>Introduction</h2>
                   <p>
-                    At Elegance Perfumes, we take your privacy seriously. This
+                    At HAMAMA Perfumes, we take your privacy seriously. This
                     policy explains how we collect, use, and protect your
                     personal information when you visit our website or make a
                     purchase.
@@ -218,7 +218,7 @@ const PrivacyPolicyPage = () => {
                   <div className="contact-info">
                     <div className="contact-item">
                       <Mail size={18} />
-                      <span>elegance.myperfume@gmail.com</span>
+                      <span>hamama.myperfume@gmail.com</span>
                     </div>
                     <div className="contact-item">
                       <Phone size={18} />

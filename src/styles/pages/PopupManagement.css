@@ -1,7 +1,43 @@
 /* frontend/src/styles/pages/PopupManagement.css */
 
+/* ============================================
+   POPUP MANAGEMENT - MATCH ORDER MANAGEMENT
+   ============================================ */
+
 .popup-management {
   padding: 0;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+
+.management-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.management-header h1 {
+  color: #ffffff;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.management-header p {
+  color: #6b7280;
+  margin: 0;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .btn-add-popup {
@@ -22,6 +58,45 @@
   transform: translateY(-2px);
 }
 
+/* ============================================
+   TABLE - MATCH ORDER MANAGEMENT
+   ============================================ */
+
+.admin-table {
+  color: #e5e7eb;
+}
+
+.admin-table thead th {
+  background: #1a1a1a;
+  color: #9ca3af;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 12px 16px;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.admin-table tbody td {
+  padding: 12px 16px;
+  vertical-align: middle;
+  border-bottom: 1px solid #1a1a1a;
+  background: #0a0a0a;
+  color: #e5e7eb;
+}
+
+.admin-table tbody tr:hover td {
+  background: rgba(212, 175, 55, 0.05);
+}
+
+.admin-table tbody tr.selected-row td {
+  background: rgba(139, 0, 0, 0.08);
+}
+
+/* ============================================
+   POPUP NAME CELL
+   ============================================ */
+
 .popup-name-cell {
   display: flex;
   align-items: center;
@@ -34,34 +109,40 @@
   border-radius: 8px;
   object-fit: cover;
   background: #1a1a1a;
+  border: 1px solid #2a2a2a;
 }
 
 .popup-thumb-placeholder {
   width: 40px;
   height: 40px;
   border-radius: 8px;
-  background: rgba(139, 0, 0, 0.1);
+  background: #1a1a1a;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #8b0000;
+  border: 1px solid #2a2a2a;
 }
 
 .popup-title {
-  color: #ffffff;
+  color: #d4af37 !important;
   font-weight: 600;
   font-size: 0.9rem;
 }
 
-.popup-subtitle {
-  color: #6b7280;
-  font-size: 0.75rem;
+.popup-title:hover {
+  color: #e8c84a !important;
 }
 
-.targeting-badge {
-  font-size: 0.65rem;
-  padding: 3px 10px;
+.popup-subtitle {
+  color: #9ca3af;
+  font-size: 0.75rem;
+  display: block;
 }
+
+/* ============================================
+   TRIGGER INFO
+   ============================================ */
 
 .trigger-info {
   display: flex;
@@ -70,6 +151,25 @@
   color: #9ca3af;
   font-size: 0.8rem;
 }
+
+.trigger-info .trigger-value {
+  color: #d4af37;
+  font-weight: 600;
+}
+
+/* ============================================
+   PRIORITY
+   ============================================ */
+
+.priority-value {
+  color: #60a5fa;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+/* ============================================
+   ANALYTICS STATS
+   ============================================ */
 
 .analytics-stats {
   display: flex;
@@ -85,34 +185,339 @@
   color: #9ca3af;
 }
 
-/* Tabs */
+.analytics-stats .stat .stat-value {
+  color: #10b981;
+  font-weight: 600;
+}
+
+.analytics-stats .stat .stat-icon {
+  color: #6b7280;
+}
+
+/* ============================================
+   STATUS BADGE - MATCH ORDER MANAGEMENT
+   ============================================ */
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  font-weight: 500;
+  font-size: 0.7rem;
+  border-radius: 50px;
+  color: #ffffff !important;
+}
+
+.status-badge.bg-success {
+  background: #059669 !important;
+}
+
+.status-badge.bg-secondary {
+  background: #6b7280 !important;
+}
+
+.status-badge.bg-warning {
+  background: #d97706 !important;
+}
+
+.status-badge.bg-danger {
+  background: #dc2626 !important;
+}
+
+.status-badge.bg-dark {
+  background: #1a1a1a !important;
+}
+
+.status-badge.bg-info {
+  background: #2563eb !important;
+}
+
+/* ============================================
+   TARGETING BADGE
+   ============================================ */
+
+.targeting-badge {
+  font-size: 0.65rem;
+  padding: 3px 10px;
+  border-radius: 50px;
+  color: #ffffff !important;
+}
+
+.targeting-badge.bg-info {
+  background: #2563eb !important;
+}
+
+/* ============================================
+   ACTION BUTTONS - MATCH ORDER MANAGEMENT
+   ============================================ */
+
+.action-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.action-btn {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #1a1a1a;
+  color: #9ca3af;
+}
+
+.action-btn:hover {
+  background: #2a2a2a;
+  color: #ffffff;
+}
+
+/* Toggle Button */
+.action-btn.toggle.active {
+  color: #10b981;
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.action-btn.toggle.active:hover {
+  background: rgba(16, 185, 129, 0.15);
+  border-color: #10b981;
+  color: #10b981;
+}
+
+.action-btn.toggle.inactive {
+  color: #6b7280;
+  border-color: rgba(107, 114, 128, 0.3);
+}
+
+.action-btn.toggle.inactive:hover {
+  background: rgba(107, 114, 128, 0.15);
+  border-color: #6b7280;
+  color: #6b7280;
+}
+
+/* Edit Button */
+.action-btn.edit {
+  color: #60a5fa;
+  border-color: rgba(96, 165, 250, 0.3);
+}
+
+.action-btn.edit:hover {
+  background: rgba(96, 165, 250, 0.15);
+  border-color: #60a5fa;
+  color: #60a5fa;
+}
+
+/* View Button */
+.action-btn.view {
+  color: #34d399;
+  border-color: rgba(52, 211, 153, 0.3);
+}
+
+.action-btn.view:hover {
+  background: rgba(52, 211, 153, 0.15);
+  border-color: #34d399;
+  color: #34d399;
+}
+
+/* Delete Button */
+.action-btn.delete {
+  color: #ef4444;
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.action-btn.delete:hover {
+  background: rgba(239, 68, 68, 0.15);
+  border-color: #ef4444;
+  color: #ef4444;
+}
+
+/* Duplicate Button */
+.action-btn.duplicate {
+  color: #8b5cf6;
+  border-color: rgba(139, 92, 246, 0.3);
+}
+
+.action-btn.duplicate:hover {
+  background: rgba(139, 92, 246, 0.15);
+  border-color: #8b5cf6;
+  color: #8b5cf6;
+}
+
+/* History Button */
+.action-btn.history {
+  color: #f59e0b;
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+.action-btn.history:hover {
+  background: rgba(245, 158, 11, 0.15);
+  border-color: #f59e0b;
+  color: #f59e0b;
+}
+
+/* Download Button */
+.action-btn.download {
+  color: #10b981;
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.action-btn.download:hover {
+  background: rgba(16, 185, 129, 0.15);
+  border-color: #10b981;
+  color: #10b981;
+}
+
+/* Tooltip on hover */
+.action-btn::before {
+  content: attr(title);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(10, 10, 10, 0.9);
+  color: #ffffff;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.6rem;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  backdrop-filter: blur(4px);
+  border: 1px solid #2a2a2a;
+}
+
+.action-btn:hover::before {
+  opacity: 1;
+}
+
+/* ============================================
+   TABS - MATCH ORDER MANAGEMENT
+   ============================================ */
+
 .popup-tabs .nav-link {
   color: #9ca3af;
   font-size: 0.85rem;
   padding: 8px 16px;
   border: none;
   background: transparent;
+  border-bottom: 2px solid transparent;
 }
 
 .popup-tabs .nav-link.active {
-  color: #ffffff;
-  background: rgba(139, 0, 0, 0.1);
-  border-bottom: 2px solid #8b0000;
+  color: #d4af37;
+  background: transparent;
+  border-bottom: 2px solid #d4af37;
 }
 
 .popup-tabs .nav-link:hover {
   color: #ffffff;
 }
 
-/* Image Upload */
+/* ============================================
+   MODAL - MATCH ORDER MANAGEMENT
+   ============================================ */
+
+.admin-modal .modal-content {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  color: #e5e7eb;
+}
+
+.admin-modal .modal-header {
+  border-bottom: 1px solid #2a2a2a;
+  padding: 16px 20px;
+}
+
+.admin-modal .modal-header .modal-title {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.admin-modal .modal-header .btn-close {
+  color: #ffffff;
+  opacity: 0.6;
+}
+
+.admin-modal .modal-header .btn-close:hover {
+  opacity: 1;
+}
+
+.admin-modal .modal-body {
+  padding: 20px;
+}
+
+.admin-modal .modal-footer {
+  border-top: 1px solid #2a2a2a;
+  padding: 16px 20px;
+}
+
+.admin-modal .form-label {
+  color: #e5e7eb;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.admin-modal .form-control,
+.admin-modal .form-select {
+  background: #0a0a0a;
+  border: 1px solid #2a2a2a;
+  color: #e5e7eb;
+  border-radius: 6px;
+  padding: 8px 12px;
+}
+
+.admin-modal .form-control:focus,
+.admin-modal .form-select:focus {
+  background: #0a0a0a;
+  border-color: #8b0000;
+  color: #e5e7eb;
+  box-shadow: 0 0 0 3px rgba(139, 0, 0, 0.15);
+}
+
+.admin-modal .form-control::placeholder {
+  color: #6b7280;
+}
+
+.admin-modal .form-text {
+  color: #6b7280 !important;
+  font-size: 0.75rem;
+}
+
+.admin-modal .form-check-label {
+  color: #e5e7eb;
+}
+
+.admin-modal .form-check-input {
+  background: #0a0a0a;
+  border: 1px solid #2a2a2a;
+}
+
+.admin-modal .form-check-input:checked {
+  background: #8b0000;
+  border-color: #8b0000;
+}
+
+/* ============================================
+   IMAGE UPLOAD - DARK THEME
+   ============================================ */
+
 .popup-upload-area {
   position: relative;
-  border: 2px dashed rgba(255, 255, 255, 0.1);
+  border: 2px dashed #2a2a2a;
   border-radius: 8px;
   padding: 30px;
   text-align: center;
   cursor: pointer;
   transition: all 0.3s ease;
+  background: #0a0a0a;
 }
 
 .popup-upload-area:hover {
@@ -135,13 +540,13 @@
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  color: #9ca3af;
+  color: #6b7280;
   cursor: pointer;
 }
 
 .popup-upload-label span {
   font-size: 0.9rem;
-  color: #ffffff;
+  color: #e5e7eb;
 }
 
 .popup-upload-label small {
@@ -154,6 +559,7 @@
   margin-top: 12px;
   border-radius: 8px;
   overflow: hidden;
+  border: 1px solid #2a2a2a;
 }
 
 .popup-preview-image {
@@ -166,8 +572,8 @@
   position: absolute;
   top: 8px;
   right: 8px;
-  background: rgba(0, 0, 0, 0.7);
-  border: none;
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid #2a2a2a;
   border-radius: 50%;
   width: 28px;
   height: 28px;
@@ -181,22 +587,164 @@
 }
 
 .popup-preview-remove:hover {
-  background: #ef4444;
+  background: #dc2626;
+  border-color: #dc2626;
 }
 
 .popup-current-label {
   position: absolute;
   bottom: 8px;
   left: 8px;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.8);
   color: #ffffff;
   padding: 2px 10px;
   border-radius: 4px;
   font-size: 0.7rem;
+  border: 1px solid #2a2a2a;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* ============================================
+   PAGINATION - MATCH ORDER MANAGEMENT
+   ============================================ */
+
+.pagination-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  border-top: 1px solid #2a2a2a;
+  background: #0a0a0a;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.pagination-info {
+  color: #9ca3af;
+  font-size: 0.85rem;
+}
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.pagination-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  background: transparent;
+  color: #9ca3af;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pagination-btn:hover:not(.disabled) {
+  border-color: #8b0000;
+  color: #ffffff;
+  background: rgba(139, 0, 0, 0.1);
+}
+
+.pagination-btn.disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.pagination-pages {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 0 4px;
+}
+
+.pagination-page-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 36px;
+  padding: 0 10px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: transparent;
+  color: #9ca3af;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pagination-page-btn:hover:not(.active) {
+  border-color: #2a2a2a;
+  color: #ffffff;
+}
+
+.pagination-page-btn.active {
+  background: #8b0000;
+  color: #ffffff;
+  border-color: #8b0000;
+  font-weight: 600;
+}
+
+.pagination-ellipsis {
+  color: #4a4a4a;
+  padding: 0 4px;
+  font-size: 0.85rem;
+}
+
+.items-per-page {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #9ca3af;
+  font-size: 0.85rem;
+}
+
+.limit-select {
+  padding: 4px 8px;
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.limit-select:focus {
+  outline: none;
+  border-color: #8b0000;
+}
+
+/* ============================================
+   RESPONSIVE - MATCH ORDER MANAGEMENT
+   ============================================ */
+
+@media (max-width: 1200px) {
+  .header-actions {
+    gap: 8px;
+  }
+
+  .btn-add-popup {
+    padding: 6px 12px;
+    font-size: 0.78rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .management-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .header-actions {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
   .popup-name-cell {
     flex-direction: column;
     align-items: flex-start;
@@ -206,8 +754,215 @@
     width: 32px;
     height: 32px;
   }
+}
+
+@media (max-width: 768px) {
+  .management-header h1 {
+    font-size: 1.3rem;
+  }
+
+  .management-header p {
+    font-size: 0.85rem;
+  }
+
+  .admin-table thead th {
+    font-size: 0.7rem;
+    padding: 8px 12px;
+  }
+
+  .admin-table tbody td {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+
+  .admin-table td .popup-title {
+    font-size: 0.8rem;
+  }
+
+  .admin-table td .trigger-info {
+    font-size: 0.7rem;
+  }
+
+  .action-btn {
+    width: 28px;
+    height: 28px;
+  }
+
+  .action-btn svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .pagination-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 12px 16px;
+  }
+
+  .pagination-info {
+    text-align: center;
+  }
+
+  .pagination-controls {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .pagination-page-btn {
+    min-width: 32px;
+    height: 32px;
+    font-size: 0.75rem;
+    padding: 0 6px;
+  }
+
+  .pagination-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .items-per-page {
+    justify-content: center;
+  }
 
   .popup-upload-area {
     padding: 20px;
+  }
+
+  .popup-tabs .nav-link {
+    font-size: 0.75rem;
+    padding: 6px 12px;
+  }
+
+  .admin-modal .modal-body {
+    padding: 16px;
+  }
+
+  .btn-add-popup {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Hide tooltips on mobile */
+  .action-btn::before {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .pagination-controls {
+    gap: 2px;
+  }
+
+  .pagination-page-btn {
+    min-width: 28px;
+    height: 28px;
+    font-size: 0.7rem;
+    padding: 0 4px;
+  }
+
+  .pagination-btn {
+    width: 28px;
+    height: 28px;
+  }
+
+  .pagination-btn svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .pagination-ellipsis {
+    font-size: 0.7rem;
+  }
+
+  .admin-table tbody td {
+    padding: 6px 8px;
+    font-size: 0.7rem;
+  }
+
+  .admin-table thead th {
+    padding: 6px 8px;
+    font-size: 0.6rem;
+  }
+
+  .popup-title {
+    font-size: 0.7rem !important;
+  }
+
+  .popup-subtitle {
+    font-size: 0.6rem;
+  }
+
+  .status-badge {
+    font-size: 0.55rem;
+    padding: 2px 6px;
+  }
+
+  .action-btn {
+    width: 24px;
+    height: 24px;
+  }
+
+  .action-btn svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .popup-thumb {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* ============================================
+   TOUCH DEVICE OPTIMIZATION
+   ============================================ */
+
+@media (hover: none) {
+  .action-btn::before {
+    display: none;
+  }
+
+  .action-btn:hover {
+    background: #1a1a1a;
+    color: #9ca3af;
+  }
+
+  .action-btn.toggle.active:hover {
+    background: #1a1a1a;
+    color: #10b981;
+  }
+
+  .action-btn.edit:hover {
+    background: #1a1a1a;
+    color: #60a5fa;
+  }
+
+  .action-btn.view:hover {
+    background: #1a1a1a;
+    color: #34d399;
+  }
+
+  .action-btn.delete:hover {
+    background: #1a1a1a;
+    color: #ef4444;
+  }
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-add-popup,
+  .action-btn,
+  .pagination-btn,
+  .pagination-page-btn {
+    transition: none !important;
+  }
+
+  .btn-add-popup:hover {
+    transform: none !important;
   }
 }

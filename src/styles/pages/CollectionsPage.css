@@ -265,6 +265,10 @@
   transform: scale(1.05);
 }
 
+/* ============================================
+   BADGE STYLES - MATCH SHOP PAGE
+   ============================================ */
+
 .product-card-link .badge {
   position: absolute;
   top: 12px;
@@ -286,6 +290,34 @@
 .product-card-link .badge.sale {
   background: #d4af37;
   color: #0a0a0a;
+}
+
+/* ✅ Mobile - Smaller badges (matches Shop page) */
+@media (max-width: 768px) {
+  .product-card-link .badge {
+    font-size: 0.5rem !important;
+    padding: 2px 8px !important;
+    top: 8px !important;
+    left: 8px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .product-card-link .badge {
+    font-size: 0.45rem !important;
+    padding: 1px 6px !important;
+    top: 6px !important;
+    left: 6px !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .product-card-link .badge {
+    font-size: 0.4rem !important;
+    padding: 1px 4px !important;
+    top: 4px !important;
+    left: 4px !important;
+  }
 }
 
 .product-card-link .info {

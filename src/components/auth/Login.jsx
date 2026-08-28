@@ -233,7 +233,7 @@ const Login = () => {
           <h1>
             Welcome <span className="highlight">Back</span>
           </h1>
-          <p>Sign in to your Elegance Perfumes account</p>
+          <p>Sign in to your HAMAMA Perfumes account</p>
         </div>
 
         {/* ✅ Rate Limit Warning */}

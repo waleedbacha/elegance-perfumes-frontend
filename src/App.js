@@ -99,7 +99,7 @@ function App() {
     // Wrap with GoogleOAuthProvider
     <GoogleOAuthProvider clientId={googleClientId}>
       <Helmet>
-        <title>Elegance Perfumes - Luxury Fragrances</title>
+        <title>HAMAMA Perfumes - Luxury Fragrances</title>
         <meta
           name="description"
           content="Discover our curated collection of luxury perfumes."

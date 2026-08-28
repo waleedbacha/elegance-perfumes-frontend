@@ -273,7 +273,7 @@
 }
 
 /* ============================================
-   CATEGORY BADGE
+   CATEGORY BADGE - UPDATED
    ============================================ */
 
 .category-badge {
@@ -284,9 +284,24 @@
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.category-card:hover .category-badge {
-  opacity: 1;
-  transform: translateY(0);
+/* Desktop - Show on hover */
+@media (min-width: 768px) {
+  .category-card:hover .category-badge {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile & Touch devices - Hide completely */
+@media (max-width: 767px), (hover: none) {
+  .category-badge {
+    display: none !important;
+  }
+}
+
+/* Safety - Hide empty badge */
+.category-badge:empty {
+  display: none !important;
 }
 
 .badge-text {

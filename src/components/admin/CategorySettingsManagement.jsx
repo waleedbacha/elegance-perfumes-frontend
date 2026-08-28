@@ -70,18 +70,30 @@ const CategorySettingsManagement = () => {
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: type === "checkbox" ? checked : value,
-    }));
+
+    // For badge text, allow empty values
+    if (name === "category_badge_text") {
+      setFormData((prev) => ({
+        ...prev,
+        [name]: value, // Allow empty string
+      }));
+    } else {
+      setFormData((prev) => ({
+        ...prev,
+        [name]: type === "checkbox" ? checked : value,
+      }));
+    }
   };
+
+  // CategorySettingsManagement.jsx
+  // Complete updated handleSave
 
   const handleSave = async () => {
     setSaving(true);
     try {
       const settingsToSave = Object.entries(formData).map(([key, value]) => ({
         key,
-        value,
+        value: value ?? "", // Ensure empty strings are saved properly
         type: typeof value === "boolean" ? "boolean" : "string",
         group: "category",
         description: `Category section ${key.replace("category_", "").replace(/_/g, " ")}`,
@@ -108,20 +120,12 @@ const CategorySettingsManagement = () => {
 
       if (!hasError) {
         toast.success("All category settings saved successfully!");
-
-        // ✅ CRITICAL: Refresh admin settings
         await loadSettings();
-
-        // ✅ CRITICAL: Refresh public settings for CategorySection
         await dispatch(getPublicSettings("category"));
-
-        // ✅ Force a state update by dispatching again after a small delay
         setTimeout(async () => {
           await dispatch(getPublicSettings("category"));
           console.log("🔄 Settings refreshed again");
         }, 100);
-
-        // ✅ Store timestamp in localStorage to trigger refresh
         localStorage.setItem("categorySettingsUpdated", Date.now().toString());
       } else {
         toast.error(`Failed to save: ${errorMessages.join(", ")}`);

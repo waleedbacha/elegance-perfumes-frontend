@@ -9,14 +9,14 @@ const SEO = ({
   image,
   url,
   type = "website",
-  siteName = "Elegance Perfumes",
+  siteName = "HAMAMA Perfumes",
   twitterHandle = "@eleganceperfumes",
   noIndex = false,
   publishedTime,
   modifiedTime,
-  author = "Elegance Perfumes",
+  author = "HAMAMA Perfumes",
 }) => {
-  const siteTitle = "Elegance Perfumes";
+  const siteTitle = "HAMAMA Perfumes";
   const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
   const defaultImage = "https://eleganceperfumes.com/og-image.jpg";
   const defaultDescription =

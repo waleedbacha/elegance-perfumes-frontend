@@ -6,10 +6,10 @@ const RegisterPage = () => {
   return (
     <>
       <Helmet>
-        <title>Register - Elegance Perfumes</title>
+        <title>Register - HAMAMA Perfumes</title>
         <meta
           name="description"
-          content="Create your Elegance Perfumes account and discover luxury fragrances."
+          content="Create your HAMAMA Perfumes account and discover luxury fragrances."
         />
       </Helmet>
       <Register />

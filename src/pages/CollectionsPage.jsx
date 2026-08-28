@@ -308,7 +308,7 @@ const CollectionsPage = () => {
     activeCategory === "all"
       ? "All Collections"
       : `${activeCategory} Collection`;
-  const collectionDescription = `Explore ${collectionName} at Elegance Perfumes. Discover luxury fragrances for ${activeCategory === "all" ? "everyone" : activeCategory}. Authentic scents.`;
+  const collectionDescription = `Explore ${collectionName} at HAMAMA Perfumes. Discover luxury fragrances for ${activeCategory === "all" ? "everyone" : activeCategory}. Authentic scents.`;
 
   // ============================================
   // LOADING STATE

@@ -98,8 +98,8 @@ const CartPage = () => {
     <>
       <SEO
         title="Shopping Cart"
-        description="Review your items in the shopping cart. Checkout securely at Elegance Perfumes."
-        keywords="shopping cart, perfume cart, checkout, Elegance Perfumes cart"
+        description="Review your items in the shopping cart. Checkout securely at HAMAMA Perfumes."
+        keywords="shopping cart, perfume cart, checkout, HAMAMA Perfumes cart"
         url="/cart"
       />
       <Navbar />

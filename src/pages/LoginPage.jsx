@@ -6,10 +6,10 @@ const LoginPage = () => {
   return (
     <>
       <Helmet>
-        <title>Login - Elegance Perfumes</title>
+        <title>Login - HAMAMA Perfumes</title>
         <meta
           name="description"
-          content="Sign in to your Elegance Perfumes account and explore luxury fragrances."
+          content="Sign in to your HAMAMA Perfumes account and explore luxury fragrances."
         />
       </Helmet>
       <Login />

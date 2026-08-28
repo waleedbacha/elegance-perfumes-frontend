@@ -89,9 +89,8 @@ const ContactPage = () => {
   const contactInfo = {
     address: "Gulburg Greens, Islamabad, Pakistan",
     phone: "+92 319 9457143",
-    email: "elegance.myperfume@gmail.com",
-    tiktok:
-      "https://www.tiktok.com/@elegance.myperfumes?_r=1&_t=ZS-97zqqy3DRtC",
+    email: "hamama.myperfume@gmail.com",
+    tiktok: "https://www.tiktok.com/@hamama.myperfumes?_r=1&_t=ZS-97zqqy3DRtC",
     hours: "Mon - Sat: 9:00 AM - 9:00 PM",
     whatsapp: "https://wa.me/923199457143",
   };
@@ -147,8 +146,8 @@ const ContactPage = () => {
     <>
       <SEO
         title="Contact Us"
-        description="Get in touch with Elegance Perfumes. Reach us via phone, email, WhatsApp, or visit our store in Islamabad, Pakistan."
-        keywords="contact perfume store, fragrance support, perfume customer service, Elegance Perfumes contact"
+        description="Get in touch with HAMAMA Perfumes. Reach us via phone, email, WhatsApp, or visit our store in Islamabad, Pakistan."
+        keywords="contact perfume store, fragrance support, perfume customer service, HAMAMA Perfumes contact"
         url="/contact"
       />
       <div className="contact-page">
@@ -279,7 +278,7 @@ const ContactPage = () => {
                     allowFullScreen=""
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="Elegance Perfumes Location"
+                    title="HAMAMA Perfumes Location"
                   />
                 </div>
                 <div className="map-overlay">

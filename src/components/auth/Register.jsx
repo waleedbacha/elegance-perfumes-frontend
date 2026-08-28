@@ -203,7 +203,7 @@ const Register = () => {
           <h1>
             Create <span className="highlight">Account</span>
           </h1>
-          <p>Join the Elegance Perfumes community</p>
+          <p>Join the HAMAMA Perfumes community</p>
         </div>
 
         {/* Social Buttons */}

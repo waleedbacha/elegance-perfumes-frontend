@@ -539,7 +539,7 @@ const ShopPage = () => {
       <>
         <SEO
           title="Shop"
-          description="Shop luxury fragrances at Elegance Perfumes. Browse our collection of premium perfumes for men and women. Authentic scents with fast delivery."
+          description="Shop luxury fragrances at HAMAMA Perfumes. Browse our collection of premium perfumes for men and women. Authentic scents with fast delivery."
           keywords="shop perfumes, luxury fragrances, buy perfume online, perfume store Pakistan, authentic perfumes"
           url="/shop"
         />

@@ -183,7 +183,7 @@ const SEOManagement = () => {
                     type="text"
                     name="site_name"
                     defaultValue={g.site_name}
-                    placeholder="Elegance Perfumes"
+                    placeholder="HAMAMA Perfumes"
                   />
                   <Form.Text className="text-muted">
                     Your brand or site name
@@ -491,7 +491,7 @@ const SEOManagement = () => {
                 }
               />
               <Form.Text className="text-muted">
-                Example: "Chanel No. 5 | Chanel | Elegance Perfumes"
+                Example: "Chanel No. 5 | Chanel | HAMAMA Perfumes"
               </Form.Text>
             </Form.Group>
 

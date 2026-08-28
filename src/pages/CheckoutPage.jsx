@@ -80,8 +80,8 @@ const CheckoutPage = () => {
     <>
       <SEO
         title="Checkout"
-        description="Complete your purchase securely at Elegance Perfumes. Fast delivery across Pakistan."
-        keywords="checkout, buy perfume, secure payment, Elegance Perfumes checkout"
+        description="Complete your purchase securely at HAMAMA Perfumes. Fast delivery across Pakistan."
+        keywords="checkout, buy perfume, secure payment, HAMAMA Perfumes checkout"
         url="/checkout"
       />
       <Navbar />

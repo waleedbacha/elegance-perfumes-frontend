@@ -8,7 +8,7 @@ const testimonials = [
     name: "Sarah Khan",
     role: "Beauty Enthusiast",
     quote:
-      "The fragrances are absolutely divine! I've never experienced such quality and longevity. Elegance Perfumes has become my go-to destination for luxury scents.",
+      "The fragrances are absolutely divine! I've never experienced such quality and longevity. HAMAMA Perfumes has become my go-to destination for luxury scents.",
     avatar: "SK",
   },
   {
@@ -24,7 +24,7 @@ const testimonials = [
     name: "Fatima Noor",
     role: "Fashion Blogger",
     quote:
-      "I've been collecting perfumes for years and Elegance Perfumes has some of the most unique and sophisticated scents I've ever encountered. Truly exceptional!",
+      "I've been collecting perfumes for years and HAMAMA Perfumes has some of the most unique and sophisticated scents I've ever encountered. Truly exceptional!",
     avatar: "FN",
   },
 ];
