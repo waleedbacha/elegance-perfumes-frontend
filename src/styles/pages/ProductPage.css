@@ -1298,3 +1298,86 @@
     transform: none !important;
   }
 }
+/* ============================================
+   MOBILE: REORDER PRICE & SELECTORS ABOVE DESCRIPTION
+   ============================================ */
+
+/* For mobile devices only */
+@media (max-width: 768px) {
+  /* ✅ Make product-info a flex container */
+  .product-info {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+
+  /* ✅ Move price section up */
+  .product-info .product-brand {
+    order: 0 !important;
+  }
+
+  .product-info .product-name {
+    order: 1 !important;
+  }
+
+  .product-info .product-rating {
+    order: 2 !important;
+  }
+
+  .product-info .product-price {
+    order: 3 !important;
+  }
+
+  .product-info .stock-status {
+    order: 4 !important;
+  }
+
+  /* ✅ Size selector right after stock status */
+  .product-info .size-selector {
+    order: 5 !important;
+  }
+
+  /* ✅ Quantity selector right after size */
+  .product-info .quantity-selector {
+    order: 6 !important;
+  }
+
+  /* ✅ Product actions (Add to Cart, Buy Now) */
+  .product-info .product-actions {
+    order: 7 !important;
+  }
+
+  /* ✅ Product features */
+  .product-info .product-features {
+    order: 8 !important;
+  }
+
+  /* ✅ Description moved to bottom */
+  .product-info .product-description {
+    order: 9 !important;
+  }
+
+  /* ✅ Notes moved after description */
+  .product-info .product-notes {
+    order: 10 !important;
+  }
+
+  /* ✅ Attributes moved last */
+  .product-info .product-attributes {
+    order: 11 !important;
+  }
+}
+
+/* For very small mobile devices */
+@media (max-width: 576px) {
+  .product-info .product-price .current {
+    font-size: 1.3rem !important;
+  }
+
+  /* Make stock status more compact */
+  .stock-status {
+    padding: 6px 12px !important;
+    font-size: 0.8rem !important;
+    margin-bottom: 12px !important;
+  }
+}

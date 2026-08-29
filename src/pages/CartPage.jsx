@@ -1,3 +1,5 @@
+// frontend/src/pages/CartPage.jsx
+
 import React, { useState } from "react";
 import { Container, Row, Col, Button, Form } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
@@ -116,7 +118,8 @@ const CartPage = () => {
                   const itemTotal =
                     item.totalPrice || item.price * item.quantity;
                   const hasDiscount = item.discount > 0;
-                  const discountedPrice = item.price - item.discount;
+                  const originalPrice = item.price; // This is comparePrice (original)
+                  const discountedPrice = item.price - item.discount; // This is the sale price
 
                   return (
                     <motion.div
@@ -141,14 +144,16 @@ const CartPage = () => {
                           {hasDiscount ? (
                             <>
                               <span className="original-price">
-                                PKR {item.price?.toLocaleString() || 0}
+                                PKR {originalPrice?.toLocaleString() || 0}
                               </span>
                               <span className="discounted-price">
                                 PKR {discountedPrice?.toLocaleString() || 0}
                               </span>
                               <span className="discount-badge">
                                 -
-                                {Math.round((item.discount / item.price) * 100)}
+                                {Math.round(
+                                  (item.discount / originalPrice) * 100,
+                                )}
                                 %
                               </span>
                             </>
@@ -211,13 +216,15 @@ const CartPage = () => {
               <div className="cart-summary">
                 <h3>Order Summary</h3>
 
-                {/* Subtotal */}
+                {/* ✅ Original Total (before product discounts) */}
                 <div className="summary-row">
-                  <span>Subtotal</span>
-                  <span>PKR {subtotal?.toLocaleString() || 0}</span>
+                  <span>Original Total</span>
+                  <span>
+                    PKR {(subtotal + productDiscount)?.toLocaleString() || 0}
+                  </span>
                 </div>
 
-                {/* Product Discount */}
+                {/* ✅ Product Discount */}
                 {productDiscount > 0 && (
                   <div className="summary-row discount">
                     <span>Product Discount</span>
@@ -225,7 +232,13 @@ const CartPage = () => {
                   </div>
                 )}
 
-                {/* Coupon Discount */}
+                {/* ✅ Subtotal After Product Discount */}
+                <div className="summary-row">
+                  <span>Subtotal</span>
+                  <span>PKR {subtotal?.toLocaleString() || 0}</span>
+                </div>
+
+                {/* ✅ Coupon Discount */}
                 {couponDiscount > 0 && coupon?.code && (
                   <div className="summary-row discount">
                     <span>Coupon Discount ({coupon.code})</span>
@@ -239,9 +252,9 @@ const CartPage = () => {
                   <span>PKR {shipping?.toLocaleString() || 0}</span>
                 </div>
 
-                {/* Subtotal (Final total after all discounts) */}
+                {/* ✅ Final Total */}
                 <div className="summary-row total">
-                  <span>Subtotal</span>
+                  <span>Total</span>
                   <span>PKR {total?.toLocaleString() || 0}</span>
                 </div>
 
