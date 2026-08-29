@@ -50,6 +50,10 @@
 /* ============================================
    SECTION HEADER
    ============================================ */
+/* ============================================
+   SECTION HEADER - LUXURY ELEGANCE STYLE
+   MATCHES "EXPLORE OUR COLLECTIONS" DESIGN
+   ============================================ */
 
 .section-header {
   text-align: center;
@@ -58,12 +62,13 @@
 }
 
 .section-header .section-title {
-  font-family: var(--font-display);
+  font-family: "Playfair Display", "Times New Roman", Georgia, serif;
   font-weight: 700;
-  font-size: 2.8rem;
-  color: var(--color-text-primary);
-  margin-bottom: 8px;
-  letter-spacing: 1px;
+  font-size: 3.2rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+  line-height: 1.15;
 }
 
 .section-header .section-title .highlight {
@@ -71,26 +76,98 @@
   position: relative;
 }
 
+/* Remove the previous underline */
 .section-header .section-title .highlight::after {
-  content: "";
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    var(--color-blood-red),
-    transparent
-  );
+  display: none;
 }
 
 .section-header .section-subtitle {
-  color: var(--color-text-secondary);
-  font-size: 1.1rem;
-  font-weight: 300;
-  letter-spacing: 1px;
+  color: #9aa8ba;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.15rem;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  line-height: 1.5;
+}
+
+/* ============================================
+   TABLET
+   ============================================ */
+
+@media (max-width: 991px) {
+  .section-header {
+    margin-bottom: 35px;
+  }
+
+  .section-header .section-title {
+    font-size: 2.6rem;
+  }
+
+  .section-header .section-subtitle {
+    font-size: 1rem;
+    letter-spacing: 1.2px;
+  }
+}
+
+/* ============================================
+   MOBILE
+   ============================================ */
+
+@media (max-width: 767px) {
+  .section-header {
+    margin-bottom: 28px;
+    padding: 0 15px;
+  }
+
+  .section-header .section-title {
+    font-size: 2rem;
+    letter-spacing: 0.3px;
+    line-height: 1.2;
+  }
+
+  .section-header .section-subtitle {
+    font-size: 0.85rem;
+    letter-spacing: 0.8px;
+  }
+}
+
+/* ============================================
+   SMALL MOBILE
+   ============================================ */
+
+@media (max-width: 575px) {
+  .section-header {
+    margin-bottom: 24px;
+    padding: 0 12px;
+  }
+
+  .section-header .section-title {
+    font-size: 1.7rem;
+  }
+
+  .section-header .section-subtitle {
+    font-size: 0.75rem;
+    letter-spacing: 0.6px;
+  }
+}
+
+/* ============================================
+   EXTRA SMALL MOBILE
+   ============================================ */
+
+@media (max-width: 380px) {
+  .section-header {
+    margin-bottom: 20px;
+  }
+
+  .section-header .section-title {
+    font-size: 1.5rem;
+  }
+
+  .section-header .section-subtitle {
+    font-size: 0.68rem;
+    letter-spacing: 0.4px;
+  }
 }
 
 /* ============================================
@@ -1092,5 +1169,71 @@
 
   .category-card:hover .category-image {
     transform: none !important;
+  }
+}
+/* ============================================
+   MOBILE CAROUSEL - SMALLER SIDE CARDS
+   CENTER CARD REMAINS FULL SIZE
+   ============================================ */
+
+@media (max-width: 767px) {
+  /* Center card - full size */
+  .swiper-slide-active .category-card {
+    transform: scale(1);
+    transition: transform 0.35s ease;
+  }
+
+  /* Left and right cards - slightly smaller */
+  .swiper-slide-prev .category-card,
+  .swiper-slide-next .category-card {
+    transform: scale(0.82);
+    transition: transform 0.35s ease;
+  }
+
+  /* Give the side cards a little breathing room */
+  .swiper-slide-prev {
+    margin-right: 8px;
+  }
+
+  .swiper-slide-next {
+    margin-left: 8px;
+  }
+}
+
+/* ============================================
+   SMALL MOBILE
+   ============================================ */
+
+@media (max-width: 575px) {
+  .swiper-slide-prev .category-card,
+  .swiper-slide-next .category-card {
+    transform: scale(0.78);
+  }
+
+  .swiper-slide-prev {
+    margin-right: 6px;
+  }
+
+  .swiper-slide-next {
+    margin-left: 6px;
+  }
+}
+
+/* ============================================
+   VERY SMALL MOBILE
+   ============================================ */
+
+@media (max-width: 380px) {
+  .swiper-slide-prev .category-card,
+  .swiper-slide-next .category-card {
+    transform: scale(0.75);
+  }
+
+  .swiper-slide-prev {
+    margin-right: 5px;
+  }
+
+  .swiper-slide-next {
+    margin-left: 5px;
   }
 }

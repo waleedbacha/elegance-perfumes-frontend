@@ -17,6 +17,7 @@ import Newsletter from "../components/home/Newsletter";
 import BannerCarousel from "../components/common/BannerCarousel";
 import TopSellers from "../components/home/TopSellers";
 import NewArrivals from "../components/home/NewArrivals";
+import PerfumeCategoryCarousel from "../components/home/PerfumeCategoryCarousel";
 
 const HomePage = () => {
   return (
@@ -52,6 +53,7 @@ const HomePage = () => {
           />
           <CategorySection />
           <NewArrivals />
+          <PerfumeCategoryCarousel />
           <TopSellers />
           <FeaturedProducts />
           <Testimonials />
