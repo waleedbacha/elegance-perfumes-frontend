@@ -844,3 +844,387 @@
     transition: none !important;
   }
 }
+/* =========================================================
+   FINAL MOBILE CAROUSEL FIX
+   SMALL SIDE CARDS + CLEAR CENTER CARD
+   ========================================================= */
+
+@media (max-width: 800px) {
+  /* -----------------------------------------
+     CAROUSEL STAGE
+     ----------------------------------------- */
+
+  .perfume-carousel-stage {
+    width: 100%;
+    height: 290px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* -----------------------------------------
+     CENTER CARD
+     ----------------------------------------- */
+
+  .perfume-category-card.position-center {
+    width: 175px !important;
+    height: 245px !important;
+
+    left: 50% !important;
+    top: 50% !important;
+
+    margin-left: -87.5px !important;
+    margin-top: -122.5px !important;
+
+    transform: translateX(0) translateZ(50px) scale(1) !important;
+
+    opacity: 1 !important;
+
+    z-index: 30 !important;
+  }
+
+  /* -----------------------------------------
+     LEFT CARD
+     ----------------------------------------- */
+
+  .perfume-category-card.position-left {
+    /* IMPORTANT:
+       Make the actual card smaller,
+       instead of only using scale().
+    */
+
+    width: 110px !important;
+    height: 154px !important;
+
+    left: 50% !important;
+    top: 50% !important;
+
+    margin-left: -55px !important;
+    margin-top: -77px !important;
+
+    transform: translateX(-105px) translateZ(0) rotateY(8deg) rotateZ(-1deg)
+      scale(1) !important;
+
+    opacity: 0.8 !important;
+
+    z-index: 15 !important;
+  }
+
+  /* -----------------------------------------
+     RIGHT CARD
+     ----------------------------------------- */
+
+  .perfume-category-card.position-right {
+    width: 110px !important;
+    height: 154px !important;
+
+    left: 50% !important;
+    top: 50% !important;
+
+    margin-left: -55px !important;
+    margin-top: -77px !important;
+
+    transform: translateX(105px) translateZ(0) rotateY(-8deg) rotateZ(1deg)
+      scale(1) !important;
+
+    opacity: 0.8 !important;
+
+    z-index: 15 !important;
+  }
+
+  /* -----------------------------------------
+     HIDE FAR CARDS
+     ----------------------------------------- */
+
+  .perfume-category-card.position-far-left,
+  .perfume-category-card.position-far-right {
+    display: none !important;
+  }
+
+  /* -----------------------------------------
+     SIDE CARD IMAGE
+     ----------------------------------------- */
+
+  .perfume-category-card.position-left .perfume-category-image,
+  .perfume-category-card.position-right .perfume-category-image {
+    transform: scale(1) !important;
+  }
+
+  /* -----------------------------------------
+     SIDE CARD CONTENT
+     ----------------------------------------- */
+
+  .perfume-category-card.position-left .perfume-category-content,
+  .perfume-category-card.position-right .perfume-category-content {
+    bottom: 6px !important;
+    padding: 0 5px !important;
+  }
+
+  .perfume-category-card.position-left .perfume-category-content h3,
+  .perfume-category-card.position-right .perfume-category-content h3 {
+    font-size: 6px !important;
+    letter-spacing: 0.6px !important;
+  }
+
+  .perfume-category-card.position-left .perfume-category-line,
+  .perfume-category-card.position-right .perfume-category-line {
+    width: 24px !important;
+    margin-top: 3px !important;
+  }
+
+  /* -----------------------------------------
+     CENTER CARD CONTENT
+     ----------------------------------------- */
+
+  .perfume-category-card.position-center .perfume-category-content {
+    bottom: 8px !important;
+  }
+
+  .perfume-category-card.position-center .perfume-category-content h3 {
+    font-size: 9px !important;
+    letter-spacing: 0.9px !important;
+  }
+
+  .perfume-category-card.position-center .perfume-category-line {
+    width: 28px !important;
+    margin-top: 3px !important;
+  }
+
+  /* -----------------------------------------
+     ARROWS
+     ----------------------------------------- */
+
+  .perfume-carousel-arrow {
+    width: 28px !important;
+    height: 28px !important;
+
+    z-index: 100 !important;
+  }
+
+  .perfume-carousel-arrow svg {
+    width: 11px !important;
+    height: 11px !important;
+  }
+
+  .perfume-carousel-arrow-left {
+    left: 4px !important;
+  }
+
+  .perfume-carousel-arrow-right {
+    right: 4px !important;
+  }
+}
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .perfume-category-carousel {
+    padding: 15px 0 18px !important;
+  }
+
+  .perfume-carousel-heading {
+    margin-bottom: 4px !important;
+  }
+
+  .perfume-carousel-heading h2 {
+    font-size: 15px !important;
+    letter-spacing: 1.6px !important;
+  }
+
+  .perfume-carousel-stage {
+    height: 250px !important;
+  }
+
+  /* CENTER */
+
+  .perfume-category-card.position-center {
+    width: 165px !important;
+    height: 230px !important;
+
+    margin-left: -82.5px !important;
+    margin-top: -115px !important;
+
+    transform: translateX(0) translateZ(40px) scale(1) !important;
+
+    opacity: 1 !important;
+  }
+
+  /* LEFT */
+
+  .perfume-category-card.position-left {
+    width: 95px !important;
+    height: 133px !important;
+
+    margin-left: -47.5px !important;
+    margin-top: -66.5px !important;
+
+    transform: translateX(-102px) translateZ(0) rotateY(8deg) rotateZ(-1deg)
+      scale(1) !important;
+
+    opacity: 0.75 !important;
+
+    z-index: 15 !important;
+  }
+
+  /* RIGHT */
+
+  .perfume-category-card.position-right {
+    width: 95px !important;
+    height: 133px !important;
+
+    margin-left: -47.5px !important;
+    margin-top: -66.5px !important;
+
+    transform: translateX(102px) translateZ(0) rotateY(-8deg) rotateZ(1deg)
+      scale(1) !important;
+
+    opacity: 0.75 !important;
+
+    z-index: 15 !important;
+  }
+
+  /* CENTER ABOVE SIDES */
+
+  .perfume-category-card.position-center {
+    z-index: 30 !important;
+  }
+
+  /* SIDE TEXT */
+
+  .perfume-category-card.position-left .perfume-category-content,
+  .perfume-category-card.position-right .perfume-category-content {
+    bottom: 5px !important;
+  }
+
+  .perfume-category-card.position-left .perfume-category-content h3,
+  .perfume-category-card.position-right .perfume-category-content h3 {
+    font-size: 5.5px !important;
+    letter-spacing: 0.5px !important;
+  }
+
+  .perfume-category-card.position-left .perfume-category-line,
+  .perfume-category-card.position-right .perfume-category-line {
+    width: 20px !important;
+    margin-top: 2px !important;
+  }
+
+  /* CENTER TEXT */
+
+  .perfume-category-card.position-center .perfume-category-content h3 {
+    font-size: 9px !important;
+    letter-spacing: 0.9px !important;
+  }
+
+  .perfume-category-card.position-center .perfume-category-line {
+    width: 27px !important;
+  }
+}
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 400px) {
+  .perfume-carousel-stage {
+    height: 225px !important;
+  }
+
+  /* CENTER */
+
+  .perfume-category-card.position-center {
+    width: 150px !important;
+    height: 210px !important;
+
+    margin-left: -75px !important;
+    margin-top: -105px !important;
+
+    transform: translateX(0) translateZ(35px) scale(1) !important;
+
+    z-index: 30 !important;
+  }
+
+  /* LEFT */
+
+  .perfume-category-card.position-left {
+    width: 85px !important;
+    height: 119px !important;
+
+    margin-left: -42.5px !important;
+    margin-top: -59.5px !important;
+
+    transform: translateX(-92px) translateZ(0) rotateY(8deg) rotateZ(-1deg)
+      scale(1) !important;
+
+    opacity: 0.72 !important;
+
+    z-index: 15 !important;
+  }
+
+  /* RIGHT */
+
+  .perfume-category-card.position-right {
+    width: 85px !important;
+    height: 119px !important;
+
+    margin-left: -42.5px !important;
+    margin-top: -59.5px !important;
+
+    transform: translateX(92px) translateZ(0) rotateY(-8deg) rotateZ(1deg)
+      scale(1) !important;
+
+    opacity: 0.72 !important;
+
+    z-index: 15 !important;
+  }
+}
+
+/* =========================================================
+   EXTRA SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 350px) {
+  .perfume-carousel-stage {
+    height: 205px !important;
+  }
+
+  /* CENTER */
+
+  .perfume-category-card.position-center {
+    width: 138px !important;
+    height: 193px !important;
+
+    margin-left: -69px !important;
+    margin-top: -96.5px !important;
+
+    transform: translateX(0) translateZ(30px) scale(1) !important;
+  }
+
+  /* LEFT */
+
+  .perfume-category-card.position-left {
+    width: 78px !important;
+    height: 109px !important;
+
+    margin-left: -39px !important;
+    margin-top: -54.5px !important;
+
+    transform: translateX(-82px) translateZ(0) rotateY(8deg) scale(1) !important;
+
+    opacity: 0.7 !important;
+  }
+
+  /* RIGHT */
+
+  .perfume-category-card.position-right {
+    width: 78px !important;
+    height: 109px !important;
+
+    margin-left: -39px !important;
+    margin-top: -54.5px !important;
+
+    transform: translateX(82px) translateZ(0) rotateY(-8deg) scale(1) !important;
+
+    opacity: 0.7 !important;
+  }
+}
