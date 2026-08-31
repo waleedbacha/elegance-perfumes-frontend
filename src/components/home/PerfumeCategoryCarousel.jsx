@@ -1,15 +1,49 @@
+// frontend/src/components/home/PerfumeCategoryCarousel.jsx
+
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { categories } from "../../data/categoryData";
+import { useDispatch, useSelector } from "react-redux";
+import { getCategories } from "../../redux/slices/categorySlice";
 import "../../styles/components/PerfumeCategoryCarousel.css";
 
 const PerfumeCategoryCarousel = () => {
+  const dispatch = useDispatch();
+  const { categories: dbCategories, isLoading } = useSelector(
+    (state) => state.categories,
+  );
+
   const [activeIndex, setActiveIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
   const touchStartX = useRef(null);
   const touchEndX = useRef(null);
+
+  // ✅ Fetch categories from database on mount
+  useEffect(() => {
+    dispatch(getCategories());
+  }, [dispatch]);
+
+  // ✅ Transform database categories to carousel format
+  const categories = React.useMemo(() => {
+    if (!dbCategories || dbCategories.length === 0) return [];
+
+    return dbCategories
+      .filter((cat) => cat.isActive !== false) // Only active categories
+      .map((cat, index) => ({
+        id: cat._id || index + 1,
+        title: cat.displayName || cat.name.toUpperCase(),
+        image:
+          cat.image?.url ||
+          cat.imageUrl ||
+          "https://via.placeholder.com/400x600",
+        link: `/collections?category=${cat.name}`,
+        description: cat.description || "",
+        name: cat.name,
+        order: cat.order || 0,
+      }))
+      .sort((a, b) => (a.order || 0) - (b.order || 0)); // Sort by order
+  }, [dbCategories]);
 
   /*
    * Get circular position of each card relative
@@ -24,6 +58,7 @@ const PerfumeCategoryCarousel = () => {
   const getPosition = useCallback(
     (index) => {
       const total = categories.length;
+      if (total === 0) return 0;
 
       let position = index - activeIndex;
 
@@ -37,7 +72,7 @@ const PerfumeCategoryCarousel = () => {
 
       return position;
     },
-    [activeIndex],
+    [activeIndex, categories.length],
   );
 
   /*
@@ -55,7 +90,7 @@ const PerfumeCategoryCarousel = () => {
         setIsAnimating(false);
       }, 600);
     },
-    [isAnimating],
+    [isAnimating, categories.length],
   );
 
   /*
@@ -97,6 +132,8 @@ const PerfumeCategoryCarousel = () => {
    * Auto play
    */
   useEffect(() => {
+    if (categories.length === 0) return;
+
     const interval = setInterval(() => {
       if (!isAnimating) {
         handleNext();
@@ -104,7 +141,7 @@ const PerfumeCategoryCarousel = () => {
     }, 6000);
 
     return () => clearInterval(interval);
-  }, [handleNext, isAnimating]);
+  }, [handleNext, isAnimating, categories.length]);
 
   /*
    * Touch start
@@ -155,6 +192,42 @@ const PerfumeCategoryCarousel = () => {
     }
   };
 
+  // ✅ Show loading state
+  if (isLoading) {
+    return (
+      <section className="perfume-category-carousel">
+        <div className="perfume-carousel-container">
+          <div className="perfume-carousel-heading">
+            <h2>
+              <span className="heading-white">FOR EVERY</span>{" "}
+              <span className="heading-red">YOU</span>
+            </h2>
+          </div>
+          <div
+            className="perfume-carousel-stage"
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <div className="carousel-loading-spinner">
+              <div className="spinner"></div>
+              <p style={{ color: "#9ca3af", marginTop: "12px" }}>
+                Loading categories...
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // ✅ Don't render if no categories
+  if (categories.length === 0) {
+    return null;
+  }
+
   return (
     <section className="perfume-category-carousel">
       <div className="perfume-carousel-container">
@@ -162,7 +235,10 @@ const PerfumeCategoryCarousel = () => {
             TITLE
         ====================================== */}
         <div className="perfume-carousel-heading">
-          <h2>FOR EVERY YOU</h2>
+          <h2>
+            <span className="heading-white">FOR EVERY</span>{" "}
+            <span className="heading-red">YOU</span>
+          </h2>
         </div>
 
         {/* ======================================
@@ -261,7 +337,7 @@ const PerfumeCategoryCarousel = () => {
             type="button"
             className="perfume-carousel-arrow perfume-carousel-arrow-left"
             onClick={handlePrevious}
-            disabled={isAnimating}
+            disabled={isAnimating || categories.length <= 1}
             aria-label="Previous category"
           >
             <ChevronLeft />
@@ -274,7 +350,7 @@ const PerfumeCategoryCarousel = () => {
             type="button"
             className="perfume-carousel-arrow perfume-carousel-arrow-right"
             onClick={handleNext}
-            disabled={isAnimating}
+            disabled={isAnimating || categories.length <= 1}
             aria-label="Next category"
           >
             <ChevronRight />

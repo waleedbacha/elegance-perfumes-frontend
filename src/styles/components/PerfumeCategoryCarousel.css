@@ -5,7 +5,7 @@
 
 .perfume-category-carousel {
   width: 100%;
-  background: #0a0a0a;
+  background: rgba(139, 0, 0, 0.03) 0%;
   color: #fff;
   position: relative;
   overflow: hidden;
@@ -23,6 +23,11 @@
    HEADING
    ========================================================= */
 
+/* =========================================================
+   LUXURY HEADING - FOR EVERY YOU
+   MATCHING REFERENCE DESIGN
+   ========================================================= */
+
 .perfume-carousel-heading {
   width: 100%;
   text-align: center;
@@ -33,13 +38,34 @@
 
 .perfume-carousel-heading h2 {
   margin: 0;
-  font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
-  font-size: 30px;
-  font-weight: 400;
-  letter-spacing: 4px;
-  line-height: 1;
-  text-transform: uppercase;
-  color: #fff;
+
+  /* Luxury serif font */
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+
+  font-size: 42px;
+  font-weight: 700;
+
+  line-height: 1.05;
+
+  letter-spacing: 0;
+
+  text-transform: none;
+
+  color: #ffffff;
+
+  text-align: center;
+}
+
+/* FOR EVERY */
+
+.perfume-carousel-heading .heading-white {
+  color: #ffffff;
+}
+
+/* YOU */
+
+.perfume-carousel-heading .heading-red {
+  color: #8b0000;
 }
 
 /* =========================================================

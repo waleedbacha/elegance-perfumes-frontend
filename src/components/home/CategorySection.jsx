@@ -1,3 +1,5 @@
+// frontend/src/components/home/CategorySection.jsx
+
 import React, { useState, useEffect, useCallback } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -14,6 +16,9 @@ const CategorySection = () => {
   const { settings } = useSelector((state) => state.settings);
   const [gridLayout, setGridLayout] = useState("three");
   const [refreshKey, setRefreshKey] = useState(0);
+
+  // ✅ Define main categories (only show these in CategorySection)
+  const mainCategories = ["men", "women", "unisex"];
 
   // Function to fetch data
   const fetchData = useCallback(() => {
@@ -56,6 +61,11 @@ const CategorySection = () => {
     settings?.category_section_enabled !== undefined
       ? settings.category_section_enabled
       : true;
+
+  // ✅ Filter categories - ONLY show men, women, unisex
+  const filteredCategories = categories?.filter((category) =>
+    mainCategories.includes(category.name?.toLowerCase()),
+  );
 
   // If section is disabled, don't render
   if (!sectionEnabled) {
@@ -131,7 +141,8 @@ const CategorySection = () => {
     );
   }
 
-  if (!categories || categories.length === 0) {
+  // ✅ Check if filtered categories exist
+  if (!filteredCategories || filteredCategories.length === 0) {
     return null;
   }
 
@@ -165,13 +176,15 @@ const CategorySection = () => {
                 </button>
               ))}
             </div>
-            <span className="grid-count">{categories.length} items</span>
+            <span className="grid-count">
+              {filteredCategories.length} items
+            </span>
           </div>
         </div>
 
         <Row className="g-3 g-md-4">
           <AnimatePresence mode="wait">
-            {categories.map((category, index) => {
+            {filteredCategories.map((category, index) => {
               const gridCols = getGridClasses();
               return (
                 <Col
@@ -211,9 +224,13 @@ const CategorySection = () => {
                             }}
                           >
                             <div className="category-content">
-                              <div className="category-badge">
-                                <span className="badge-text">{badgeText}</span>
-                              </div>
+                              {badgeText && (
+                                <div className="category-badge">
+                                  <span className="badge-text">
+                                    {badgeText}
+                                  </span>
+                                </div>
+                              )}
                               <h3 className="category-name">
                                 {category.displayName}
                               </h3>

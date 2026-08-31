@@ -53,6 +53,7 @@ import toast from "react-hot-toast";
 import BulkUpload from "./BulkUpload";
 import * as XLSX from "xlsx";
 import "../../styles/pages/ProductManagement.css";
+import categoryService from "../../services/categoryService";
 
 const ProductManagement = () => {
   const dispatch = useDispatch();
@@ -78,6 +79,10 @@ const ProductManagement = () => {
   const [bulkAction, setBulkAction] = useState("status");
   const [bulkStatus, setBulkStatus] = useState("");
   const [isBulkProcessing, setIsBulkProcessing] = useState(false);
+
+  // category states
+  const [categoryOptions, setCategoryOptions] = useState([]);
+  const [loadingCategories, setLoadingCategories] = useState(false);
 
   // ✅ Form State
   const [formData, setFormData] = useState({
@@ -135,6 +140,38 @@ const ProductManagement = () => {
     setSelectedProducts([]);
     setSelectAll(false);
   }, [statusFilter, categoryFilter, searchTerm, currentPage]);
+
+  // Add this after your existing useEffects
+  useEffect(() => {
+    fetchCategories();
+  }, []);
+
+  const fetchCategories = async () => {
+    setLoadingCategories(true);
+    try {
+      const response = await categoryService.getCategories();
+      const categories = response.data?.categories || [];
+      setCategoryOptions(categories);
+    } catch (error) {
+      console.error("Failed to fetch categories:", error);
+      // Fallback categories
+      setCategoryOptions([
+        { name: "men", displayName: "Men" },
+        { name: "women", displayName: "Women" },
+        { name: "unisex", displayName: "Unisex" },
+        { name: "date-night", displayName: "Date Night" },
+        { name: "office-wear", displayName: "Office Wear" },
+        { name: "wedding", displayName: "Wedding" },
+        { name: "everyday-wear", displayName: "Everyday Wear" },
+        { name: "evening", displayName: "Evening" },
+        { name: "summer", displayName: "Summer" },
+        { name: "winter", displayName: "Winter" },
+        { name: "niche", displayName: "Niche" },
+      ]);
+    } finally {
+      setLoadingCategories(false);
+    }
+  };
 
   // ✅ Handle search with debounce
   const handleSearchChange = (e) => {
@@ -825,6 +862,7 @@ const ProductManagement = () => {
                 <option value="discontinued">Discontinued</option>
               </select>
             </div>
+
             <div className="filter-wrapper">
               <select
                 className="filter-select"
@@ -832,10 +870,12 @@ const ProductManagement = () => {
                 onChange={handleCategoryFilterChange}
               >
                 <option value="all">All Categories</option>
-                <option value="men">Men</option>
-                <option value="women">Women</option>
-                <option value="unisex">Unisex</option>
-                <option value="niche">Niche</option>
+                {categoryOptions.map((cat) => (
+                  <option key={cat.name} value={cat.name}>
+                    {cat.displayName ||
+                      cat.name.charAt(0).toUpperCase() + cat.name.slice(1)}
+                  </option>
+                ))}
               </select>
             </div>
             <div className="items-per-page">
@@ -1204,11 +1244,15 @@ const ProductManagement = () => {
                     name="category"
                     value={formData.category}
                     onChange={handleInputChange}
+                    required
                   >
-                    <option value="men">Men</option>
-                    <option value="women">Women</option>
-                    <option value="unisex">Unisex</option>
-                    <option value="niche">Niche</option>
+                    <option value="">Select a category</option>
+                    {categoryOptions.map((cat) => (
+                      <option key={cat.name} value={cat.name}>
+                        {cat.displayName ||
+                          cat.name.charAt(0).toUpperCase() + cat.name.slice(1)}
+                      </option>
+                    ))}
                   </Form.Select>
                 </Form.Group>
               </Col>

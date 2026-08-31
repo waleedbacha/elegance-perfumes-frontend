@@ -1,3 +1,5 @@
+// frontend/src/components/admin/CategoryManagement.jsx
+
 import React, { useState, useEffect, useRef } from "react";
 import { Card, Table, Button, Form, Modal, Badge } from "react-bootstrap";
 import {
@@ -33,15 +35,17 @@ const CategoryManagement = () => {
   const [showModal, setShowModal] = useState(false);
   const [editingCategory, setEditingCategory] = useState(null);
   const [formData, setFormData] = useState({
-    name: "men",
+    name: "",
     displayName: "",
     description: "",
     gradient: "rgba(139, 0, 0, 0.85)",
     order: 0,
+    isActive: true,
   });
   const [selectedFile, setSelectedFile] = useState(null);
   const [imagePreview, setImagePreview] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSeeding, setIsSeeding] = useState(false);
   const fileInputRef = useRef(null);
 
   useEffect(() => {
@@ -59,9 +63,32 @@ const CategoryManagement = () => {
     }
   }, [success, error]);
 
+  // ✅ Generate slug from display name
+  const generateSlug = (displayName) => {
+    return displayName
+      .toLowerCase()
+      .trim()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "");
+  };
+
   const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    const { name, value, type, checked } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: type === "checkbox" ? checked : value,
+    }));
+  };
+
+  // ✅ Handle display name change - auto-generate slug
+  const handleDisplayNameChange = (e) => {
+    const displayName = e.target.value;
+    const name = generateSlug(displayName);
+    setFormData((prev) => ({
+      ...prev,
+      displayName: displayName,
+      name: name,
+    }));
   };
 
   const handleFileChange = (e) => {
@@ -83,6 +110,7 @@ const CategoryManagement = () => {
       formDataToSend.append("description", formData.description);
       formDataToSend.append("gradient", formData.gradient);
       formDataToSend.append("order", formData.order);
+      formDataToSend.append("isActive", formData.isActive);
 
       if (selectedFile) {
         formDataToSend.append("image", selectedFile);
@@ -95,8 +123,10 @@ const CategoryManagement = () => {
             formData: formDataToSend,
           }),
         ).unwrap();
+        toast.success("Category updated successfully!");
       } else {
         await dispatch(createCategory(formDataToSend)).unwrap();
+        toast.success("Category created successfully!");
       }
 
       handleCloseModal();
@@ -116,6 +146,7 @@ const CategoryManagement = () => {
       description: category.description,
       gradient: category.gradient || "rgba(139, 0, 0, 0.85)",
       order: category.order || 0,
+      isActive: category.isActive !== undefined ? category.isActive : true,
     });
     setImagePreview(category.image?.url || null);
     setSelectedFile(null);
@@ -126,6 +157,7 @@ const CategoryManagement = () => {
     if (window.confirm("Are you sure you want to delete this category?")) {
       try {
         await dispatch(deleteCategory(id)).unwrap();
+        toast.success("Category deleted successfully!");
         dispatch(getAllCategoriesAdmin());
       } catch (error) {
         // Error handled by slice
@@ -156,6 +188,7 @@ const CategoryManagement = () => {
 
     try {
       await dispatch(reorderCategories(reorderData)).unwrap();
+      toast.success("Categories reordered successfully!");
       dispatch(getAllCategoriesAdmin());
     } catch (error) {
       // Error handled by slice
@@ -164,11 +197,15 @@ const CategoryManagement = () => {
 
   const handleSeed = async () => {
     if (window.confirm("This will create default categories. Continue?")) {
+      setIsSeeding(true);
       try {
         await dispatch(seedCategories()).unwrap();
+        toast.success("Default categories seeded successfully!");
         dispatch(getAllCategoriesAdmin());
       } catch (error) {
         // Error handled by slice
+      } finally {
+        setIsSeeding(false);
       }
     }
   };
@@ -177,15 +214,21 @@ const CategoryManagement = () => {
     setShowModal(false);
     setEditingCategory(null);
     setFormData({
-      name: "men",
+      name: "",
       displayName: "",
       description: "",
       gradient: "rgba(139, 0, 0, 0.85)",
       order: 0,
+      isActive: true,
     });
     setSelectedFile(null);
     setImagePreview(null);
     setIsSubmitting(false);
+  };
+
+  // ✅ Helper to check if category is main (for display only)
+  const isMainCategory = (name) => {
+    return ["men", "women", "unisex"].includes(name?.toLowerCase());
   };
 
   if (isLoading && !categories?.length) {
@@ -202,7 +245,7 @@ const CategoryManagement = () => {
       <div className="management-header">
         <div>
           <h1>Categories</h1>
-          <p>Manage your product categories</p>
+          <p>Manage all categories (main & lifestyle)</p>
           <span className="category-count">
             {categories?.length || 0} categories
           </span>
@@ -211,11 +254,11 @@ const CategoryManagement = () => {
           <Button
             variant="outline-secondary"
             onClick={handleSeed}
-            disabled={isLoading}
+            disabled={isLoading || isSeeding}
             className="seed-btn"
           >
-            <RefreshCw size={16} />
-            Seed Defaults
+            <RefreshCw size={16} className={isSeeding ? "spin" : ""} />
+            {isSeeding ? "Seeding..." : "Seed Defaults"}
           </Button>
           <Button
             className="btn-add-category"
@@ -235,9 +278,10 @@ const CategoryManagement = () => {
                 <tr>
                   <th>Order</th>
                   <th>Image</th>
-                  <th>Name</th>
+                  <th>Name (Slug)</th>
                   <th>Display Name</th>
                   <th>Description</th>
+                  <th>Type</th>
                   <th>Status</th>
                   <th className="text-center">Actions</th>
                 </tr>
@@ -252,6 +296,7 @@ const CategoryManagement = () => {
                             className="order-btn"
                             onClick={() => handleReorder(category._id, "up")}
                             disabled={categories.indexOf(category) === 0}
+                            title="Move Up"
                           >
                             <ArrowUp size={14} />
                           </button>
@@ -265,6 +310,7 @@ const CategoryManagement = () => {
                               categories.indexOf(category) ===
                               categories.length - 1
                             }
+                            title="Move Down"
                           >
                             <ArrowDown size={14} />
                           </button>
@@ -282,10 +328,31 @@ const CategoryManagement = () => {
                           />
                         </div>
                       </td>
-                      <td className="capitalize">{category.name}</td>
-                      <td>{category.displayName}</td>
+                      <td className="category-name-cell">
+                        <code className="slug-text">{category.name}</code>
+                      </td>
+                      <td className="fw-semibold">
+                        {category.displayName}
+                        {isMainCategory(category.name) && (
+                          <Badge bg="info" className="ms-1" size="sm">
+                            Main
+                          </Badge>
+                        )}
+                      </td>
                       <td className="description-cell">
                         {category.description}
+                      </td>
+                      <td>
+                        <Badge
+                          bg={
+                            isMainCategory(category.name)
+                              ? "primary"
+                              : "secondary"
+                          }
+                          className="type-badge"
+                        >
+                          {isMainCategory(category.name) ? "Main" : "Lifestyle"}
+                        </Badge>
                       </td>
                       <td>
                         <Badge bg={category.isActive ? "success" : "secondary"}>
@@ -314,7 +381,7 @@ const CategoryManagement = () => {
                   ))
                 ) : (
                   <tr>
-                    <td colSpan="7" className="text-center py-4 text-secondary">
+                    <td colSpan="8" className="text-center py-4 text-secondary">
                       No categories found. Click "Seed Defaults" to create
                       default categories.
                     </td>
@@ -336,43 +403,42 @@ const CategoryManagement = () => {
       >
         <Modal.Header closeButton>
           <Modal.Title>
-            {editingCategory ? "Edit Category" : "Add Category"}
+            {editingCategory ? "Edit Category" : "Add New Category"}
           </Modal.Title>
         </Modal.Header>
         <Form onSubmit={handleSubmit}>
           <Modal.Body>
             <div className="category-form">
-              {/* Name */}
-              <Form.Group className="mb-3">
-                <Form.Label>Category Name *</Form.Label>
-                <Form.Select
-                  name="name"
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  disabled={!!editingCategory}
-                >
-                  <option value="men">Men</option>
-                  <option value="women">Women</option>
-                  <option value="unisex">Unisex</option>
-                </Form.Select>
-                <Form.Text className="text-muted">
-                  {editingCategory
-                    ? "Category name cannot be changed"
-                    : "Select the category type"}
-                </Form.Text>
-              </Form.Group>
-
-              {/* Display Name */}
+              {/* ✅ Display Name - Auto-generates slug */}
               <Form.Group className="mb-3">
                 <Form.Label>Display Name *</Form.Label>
                 <Form.Control
                   type="text"
                   name="displayName"
                   value={formData.displayName}
-                  onChange={handleInputChange}
-                  placeholder="e.g., MEN"
+                  onChange={handleDisplayNameChange}
+                  placeholder="e.g., Date Night, Office Wear, Wedding"
                   required
                 />
+                <Form.Text className="text-muted">
+                  This is what customers will see. Slug will auto-generate.
+                </Form.Text>
+              </Form.Group>
+
+              {/* ✅ Slug (auto-generated) */}
+              <Form.Group className="mb-3">
+                <Form.Label>Slug (Auto-generated)</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  placeholder="Auto-generated from display name"
+                  disabled
+                  className="slug-display"
+                />
+                <Form.Text className="text-muted">
+                  Used for URLs and linking. Auto-generated from display name.
+                </Form.Text>
               </Form.Group>
 
               {/* Description */}
@@ -383,9 +449,12 @@ const CategoryManagement = () => {
                   name="description"
                   value={formData.description}
                   onChange={handleInputChange}
-                  placeholder="e.g., Bold. Strong. Confident."
+                  placeholder="e.g., Captivating. Romantic. Unforgettable."
                   required
                 />
+                <Form.Text className="text-muted">
+                  Short description shown in the carousel
+                </Form.Text>
               </Form.Group>
 
               {/* Gradient */}
@@ -414,7 +483,22 @@ const CategoryManagement = () => {
                   min="0"
                 />
                 <Form.Text className="text-muted">
-                  Lower numbers appear first
+                  Lower numbers appear first in the carousel
+                </Form.Text>
+              </Form.Group>
+
+              {/* Active Status */}
+              <Form.Group className="mb-3">
+                <Form.Check
+                  type="checkbox"
+                  name="isActive"
+                  checked={formData.isActive}
+                  onChange={handleInputChange}
+                  label="Active"
+                />
+                <Form.Text className="text-muted">
+                  Inactive categories won't appear in the carousel or product
+                  dropdown
                 </Form.Text>
               </Form.Group>
 
@@ -456,7 +540,9 @@ const CategoryManagement = () => {
                     onClick={() => {
                       setImagePreview(null);
                       setSelectedFile(null);
-                      fileInputRef.current.value = "";
+                      if (fileInputRef.current) {
+                        fileInputRef.current.value = "";
+                      }
                     }}
                     className="mt-2"
                   >
