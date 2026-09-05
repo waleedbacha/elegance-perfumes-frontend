@@ -24,12 +24,16 @@ const PerfumeCategoryCarousel = () => {
     dispatch(getCategories());
   }, [dispatch]);
 
-  // ✅ Transform database categories to carousel format
+  // ✅ Categories to exclude from carousel (already shown in CategorySection)
+  const excludedCategories = ["men", "women", "unisex"];
+
+  // ✅ Transform database categories to carousel format - EXCLUDE men, women, unisex
   const categories = React.useMemo(() => {
     if (!dbCategories || dbCategories.length === 0) return [];
 
     return dbCategories
       .filter((cat) => cat.isActive !== false) // Only active categories
+      .filter((cat) => !excludedCategories.includes(cat.name?.toLowerCase())) // ✅ EXCLUDE men, women, unisex
       .map((cat, index) => ({
         id: cat._id || index + 1,
         title: cat.displayName || cat.name.toUpperCase(),
