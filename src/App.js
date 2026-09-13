@@ -1,10 +1,12 @@
 // frontend/src/App.js
+
 import React, { useEffect, useState } from "react";
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Toaster } from "react-hot-toast";
 import { Helmet } from "react-helmet-async";
 import { GoogleOAuthProvider } from "@react-oauth/google";
+import { MessageCircle } from "lucide-react"; // ✅ Import WhatsApp icon
 import "./index.css";
 
 // Pages
@@ -34,6 +36,10 @@ import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import TermsOfServicePage from "./pages/TermsOfServicePage";
 import PopupDisplay from "./components/common/PopupDisplay";
 
+// ✅ WhatsApp Contact Info
+const WHATSAPP_NUMBER = "923199457143"; // Your WhatsApp number without +
+const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
+
 function App() {
   const dispatch = useDispatch();
   const location = useLocation();
@@ -50,7 +56,6 @@ function App() {
 
   // SCROLL TO TOP ON ROUTE CHANGE
   useEffect(() => {
-    // Scroll to top with smooth animation
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [location.pathname]);
 
@@ -96,10 +101,9 @@ function App() {
   }
 
   return (
-    // Wrap with GoogleOAuthProvider
     <GoogleOAuthProvider clientId={googleClientId}>
       <Helmet>
-        <title>HAMAMA Perfumes - Luxury Fragrances</title>
+        <title>Hamama Perfumes - Luxury Fragrances</title>
         <meta
           name="description"
           content="Discover our curated collection of luxury perfumes."
@@ -132,7 +136,7 @@ function App() {
         }}
       />
 
-      {/*Only show Navbar & Footer for non-admin routes */}
+      {/* Only show Navbar & Footer for non-admin routes */}
       {!isAdminRoute && <Navbar />}
 
       <div
@@ -174,6 +178,20 @@ function App() {
         {!isAdminRoute && <Footer />}
         {/* ✅ Discount Popup - Shows on all pages */}
         {!isAdminRoute && <PopupDisplay />}
+
+        {/* ✅ WhatsApp Floating Button - Shows on ALL non-admin pages */}
+        {!isAdminRoute && (
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="whatsapp-float"
+            title="Chat on WhatsApp"
+          >
+            <MessageCircle size={32} />
+            <span className="whatsapp-pulse" />
+          </a>
+        )}
       </div>
     </GoogleOAuthProvider>
   );
