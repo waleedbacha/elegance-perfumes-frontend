@@ -9,4 +9,4 @@ Disallow: /login
 Disallow: /register
 Disallow: /profile
 
-Sitemap: https://eleganceperfumes.com/sitemap.xml
+Sitemap: https://hamama-perfumes.vercel.app/sitemap.xml
