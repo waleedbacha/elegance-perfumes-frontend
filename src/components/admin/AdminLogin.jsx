@@ -113,7 +113,7 @@ const AdminLogin = () => {
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        placeholder="admin@elegance.pk"
+                        placeholder="admin@hamamaperfumes.pk"
                         className="admin-login-input"
                         required
                       />

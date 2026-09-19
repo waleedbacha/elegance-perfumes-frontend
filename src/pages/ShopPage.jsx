@@ -206,8 +206,8 @@ const ShopPage = () => {
   // ============================================
 
   const breadcrumbItems = [
-    { name: "Home", url: "https://eleganceperfumes.com/" },
-    { name: "Shop", url: "https://eleganceperfumes.com/shop" },
+    { name: "Home", url: "https://hamama-perfumes.vercel.app/" },
+    { name: "Shop", url: "https://hamama-perfumes.vercel.app/shop" },
   ];
 
   // Check if mobile

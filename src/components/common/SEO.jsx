@@ -10,7 +10,7 @@ const SEO = ({
   url,
   type = "website",
   siteName = "HAMAMA Perfumes",
-  twitterHandle = "@eleganceperfumes",
+  twitterHandle = "@hamamaperfumes",
   noIndex = false,
   publishedTime,
   modifiedTime,
@@ -18,10 +18,10 @@ const SEO = ({
 }) => {
   const siteTitle = "HAMAMA Perfumes";
   const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
-  const defaultImage = "https://eleganceperfumes.com/og-image.jpg";
+  const defaultImage = "https://hamama-perfumes.vercel.app/og-image.jpg";
   const defaultDescription =
-    "Discover luxury fragrances at Elegance Perfumes. Shop premium perfumes for men and women. Authentic scents, fast delivery across Pakistan.";
-  const siteUrl = "https://eleganceperfumes.com";
+    "Discover luxury fragrances at HAMAMA Perfumes. Shop premium perfumes for men and women. Authentic scents, fast delivery across Pakistan.";
+  const siteUrl = "https://hamama-perfumes.vercel.app/";
 
   const metaDescription = description || defaultDescription;
   const metaImage = image || defaultImage;

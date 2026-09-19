@@ -689,7 +689,7 @@ const AboutSettingsManagement = () => {
                       type="text"
                       value={
                         formData.about_contact_info?.[1]?.details?.[1] ||
-                        "info@elegance.pk"
+                        "hamamaperfumes.pk@gmail.com"
                       }
                       onChange={(e) => {
                         const newContact = Array.isArray(
@@ -914,7 +914,7 @@ const AboutSettingsManagement = () => {
                       type="text"
                       value={
                         formData.about_contact_info?.[1]?.details?.[1] ||
-                        "info@elegance.pk"
+                        "hamamaperfumes.pk@gmail.com"
                       }
                       onChange={(e) => {
                         const newContact = [

@@ -17,6 +17,7 @@ import Navbar from "../components/common/Navbar";
 import toast from "react-hot-toast";
 import "../styles/pages/CartPage.css";
 import SEO from "../components/common/SEO";
+import { trackInitiateCheckout } from "../utils/facebookPixel";
 
 const CartPage = () => {
   const dispatch = useDispatch();
@@ -73,6 +74,13 @@ const CartPage = () => {
       navigate("/login");
       return;
     }
+
+    // ✅ Track Meta Pixel InitiateCheckout
+    trackInitiateCheckout({
+      items: items,
+      total: total,
+    });
+
     navigate("/checkout");
   };
 

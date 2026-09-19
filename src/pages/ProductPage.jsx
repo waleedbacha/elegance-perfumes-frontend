@@ -296,11 +296,11 @@ const ProductPage = () => {
   ].join(", ");
 
   const breadcrumbItems = [
-    { name: "Home", url: "https://eleganceperfumes.com/" },
-    { name: "Shop", url: "https://eleganceperfumes.com/shop" },
+    { name: "Home", url: "https://hamama-perfumes.vercel.app/" },
+    { name: "Shop", url: "https://hamama-perfumes.vercel.app/shop" },
     {
       name: product.name,
-      url: `https://eleganceperfumes.com/product/${product._id}`,
+      url: `https://hamama-perfumes.vercel.app/product/${product._id}`,
     },
   ];
 

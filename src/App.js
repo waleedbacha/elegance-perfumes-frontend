@@ -22,6 +22,7 @@ import ForgotPasswordPage from "./pages/ForgotPasswordPage";
 import WishlistPage from "./pages/WishlistPage";
 import AdminLogin from "./components/admin/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
+import { trackPageView } from "./utils/facebookPixel";
 
 // Components
 import Navbar from "./components/common/Navbar";
@@ -57,6 +58,16 @@ function App() {
   // SCROLL TO TOP ON ROUTE CHANGE
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [location.pathname]);
+
+  // ✅ Track Meta Pixel PageView on every route change
+  useEffect(() => {
+    // Small delay to ensure the page is fully loaded
+    const timer = setTimeout(() => {
+      trackPageView();
+    }, 100);
+
+    return () => clearTimeout(timer);
   }, [location.pathname]);
 
   useEffect(() => {

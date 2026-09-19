@@ -473,7 +473,7 @@ const BannerManagement = () => {
                 onChange={(e) =>
                   setFormData({ ...formData, link: e.target.value })
                 }
-                placeholder="https://elegance.pk/collections"
+                placeholder="https://hamama-perfumes.vercel.app/collections"
               />
             </Form.Group>
 
